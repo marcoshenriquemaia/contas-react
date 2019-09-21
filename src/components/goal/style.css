@@ -1,0 +1,35 @@
+.goal-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: .7em;
+  margin-bottom: .7em;
+}
+
+.goal-bar{
+  margin-left: 5px;
+  width: 10em;
+  height: .6em;
+  border: 1px solid #53A9FF;
+  border-radius: 5px;
+}
+
+.progress-bar{
+  width: 50%;
+  height: 100%;
+  border-radius: 1em;
+  background-image: linear-gradient(to right, #53a9ff, #328de8);
+}
+
+.title-bar-wrapper{
+  width: 60%;
+  height: 100%;
+}
+
+.title-reserve{
+  font-weight: 700;
+  color: #707070;
+  font-size: 1.1em;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}

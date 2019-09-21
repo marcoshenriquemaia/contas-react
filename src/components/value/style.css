@@ -1,0 +1,16 @@
+.currency-value{
+  color: #53A9FF;
+  font-weight: 900;
+}
+
+.value-wrapper{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.value{
+  font-weight: 400;
+  color: #53A9FF;
+}
