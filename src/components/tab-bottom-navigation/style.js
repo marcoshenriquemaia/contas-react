@@ -3,9 +3,11 @@ import { FaHome } from 'react-icons/fa'
 
 export const Container = styled.div`
   display: flex;
+  position: sticky;
+  bottom: 0;
   justify-content: space-evenly;
   width: 100%;
-  height: 7%;
+  height: 6.562%;
   box-shadow: 0px -12px 6px rgba(0,0,0,.07);
 `
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Title, List, Button } from './style.js'
 import Goal from "../goal";
 
-const GoalsList = () => {
+const GoalsList = ({setShowGoals}) => {
   return (
     <>
       <Container>
@@ -13,8 +13,8 @@ const GoalsList = () => {
           <Goal></Goal>
           <Goal></Goal>
           <Goal></Goal>
+        <Button onClick={() => setShowGoals(true)}>Nova Meta</Button>
         </List>
-        <Button>Nova Meta</Button>
       </Container>
     </>
   );
