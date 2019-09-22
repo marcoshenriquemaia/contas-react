@@ -1,9 +1,9 @@
 import React from 'react'
-import './style.css'
+import { Container } from './style.js'
 
-const IconBox = () =>{
+const IconBox = ({cor, ...rest}) =>{
   return(
-    <div className='icon-box'></div>
+    <Container cor={cor} active={''}></Container>
   )
 }
 

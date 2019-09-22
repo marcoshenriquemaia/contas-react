@@ -1,4 +1,6 @@
-.wallet-list {
+import styled, { css } from "styled-components";
+
+export const Container = styled.section`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -10,4 +12,5 @@
   overflow-y: scroll;
   padding: 1em;
   transform: translateY(-1.3em);
-}
+  box-sizing: border-box;
+`;

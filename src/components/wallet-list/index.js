@@ -1,32 +1,32 @@
-import React from 'react'
-import Wallet from './wallet'
-import './style.css'
+import React from "react";
+import Wallet from "./wallet";
+import { Container } from "./style";
 
-const WalletList = () =>{
-    return(
-        <div className='wallet-list'>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-            <Wallet></Wallet>
-        </div>
-    )
-}
+const WalletList = () => {
+  return (
+    <Container>
+      <Wallet cor="red"></Wallet>
+      <Wallet cor="purple"></Wallet>
+      <Wallet cor="#ff9966"></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+      <Wallet></Wallet>
+    </Container>
+  );
+};
 
 export default WalletList;

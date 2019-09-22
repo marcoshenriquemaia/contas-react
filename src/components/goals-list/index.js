@@ -1,21 +1,21 @@
 import React from "react";
-import "./style.css";
+import { Container, Title, List, Button } from './style.js'
 import Goal from "../goal";
 
 const GoalsList = () => {
   return (
     <>
-      <div className="box-list">
-      <h1 className="goals-list-title"> Metas </h1>
-      <div className='goals-list'>
-        <Goal></Goal>
-        <Goal></Goal>
-        <Goal></Goal>
-        <Goal></Goal>
-        <Goal></Goal>
-      </div>
-      <button className='add-goals-button'>Nova Meta</button>
-      </div>
+      <Container>
+        <Title>Metas</Title>
+        <List>
+          <Goal></Goal>
+          <Goal></Goal>
+          <Goal></Goal>
+          <Goal></Goal>
+          <Goal></Goal>
+        </List>
+        <Button>Nova Meta</Button>
+      </Container>
     </>
   );
 };

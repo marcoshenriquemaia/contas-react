@@ -1,20 +1,20 @@
 import React from "react";
 import IconBox from "../icon-box";
 import Value from "../value";
-import "./style.css";
+import { Container, Wrapper, Title, Bar, ProgressBar } from "./style.js";
 
 const Goal = () => {
   return (
-    <div className="goal-box">
+    <Container>
       <IconBox></IconBox>
-        <div className="title-bar-wrapper">
-          <h1 className="title-reserve">Reserva</h1>
-          <div className="goal-bar">
-            <div className="progress-bar"></div>
-          </div>
-        </div>
-        <Value value="100.000,00"></Value>
-    </div>
+      <Wrapper>
+        <Title>Reserva</Title>
+        <Bar>
+          <ProgressBar></ProgressBar>
+        </Bar>
+      </Wrapper>
+      <Value value="100.000,00"></Value>
+    </Container>
   );
 };
 

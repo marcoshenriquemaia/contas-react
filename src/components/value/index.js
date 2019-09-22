@@ -1,14 +1,12 @@
 import React from "react";
+import { Container, Currency, Price } from "./style";
 
-import './style.css'
-
-const Value = (prop) => {
-  const { value } = prop;
+const Value = ({value}) => {
   return (
-    <div className="value-wrapper">
-      <span className="currency-value">R$</span>
-      <span className="value">{value}</span>
-    </div>
+    <Container>
+      <Currency>R$</Currency>
+      <Price>{value}</Price>
+    </Container>
   );
 };
 
