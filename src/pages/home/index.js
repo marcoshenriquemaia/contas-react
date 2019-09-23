@@ -7,7 +7,7 @@ import { Container, Wrapper } from "./style.js";
 import ModalGoals from '../../components/modal-goal'
 
 const Home = () => {
-  const [showGoals, setShowGoals] = useState(false);
+  const [showGoals, setShowGoals] = useState(true);
 
   return (
     <Container>

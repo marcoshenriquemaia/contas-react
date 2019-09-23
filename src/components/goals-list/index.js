@@ -4,7 +4,6 @@ import Goal from "../goal";
 
 const GoalsList = ({setShowGoals}) => {
   return (
-    <>
       <Container>
         <Title>Metas</Title>
         <List>
@@ -16,7 +15,6 @@ const GoalsList = ({setShowGoals}) => {
         <Button onClick={() => setShowGoals(true)}>Nova Meta</Button>
         </List>
       </Container>
-    </>
   );
 };
 
