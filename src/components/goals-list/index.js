@@ -10,8 +10,6 @@ const GoalsList = ({setShowGoals}) => {
           <Goal></Goal>
           <Goal></Goal>
           <Goal></Goal>
-          <Goal></Goal>
-          <Goal></Goal>
         <Button onClick={() => setShowGoals(true)}>Nova Meta</Button>
         </List>
       </Container>

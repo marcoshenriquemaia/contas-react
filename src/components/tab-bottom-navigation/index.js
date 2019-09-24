@@ -10,7 +10,7 @@ const TabBottomNavigation = () => {
         <NavLink to='/'> <Icon/> </NavLink>
         <NavLink to='/wallet'> <Icon /> </NavLink> 
       </Wrapper>
-      <ButtonAdd></ButtonAdd>
+      <NavLink to='/dialer'> <ButtonAdd/> </NavLink>
       <Wrapper>
         <Icon />
         <Icon />

@@ -1,12 +1,13 @@
 import React from "react";
-import { FaHome, FaWallet, FaTimes, FaPlane, FaPlus } from "react-icons/fa";
+import { FaHome, FaWallet, FaTimes, FaPlane, FaPlus, FaBackspace } from "react-icons/fa";
 
 const DictonaryIcon = {
   error: () => <FaTimes />,
   home: () => <FaHome />,
   wallet: () => <FaWallet />,
   travel: () => <FaPlane />,
-  plus: () => <FaPlus />
+  plus: () => <FaPlus />,
+  backspace: () => <FaBackspace />
 };
 
 const IconType = ({ icon }) =>

@@ -7,4 +7,5 @@ export const Button = styled.button`
   border-radius: 100em;
   border: none;
   transform: translateY(-30%);
+  outline: none;
 `;

@@ -2,18 +2,22 @@ import React from 'react'
 import { Container, BoxModal, NameField, FinishGoalWrapper, TitleFinishGoal, DateField } from './style'
 import CategorySelector from '../category-selector'
 import Dialer from '../dialer'
+import { Button } from "../goals-list/style";
 
-const ModalGoal = () =>{
+
+const ModalGoal = ({setShowGoals}) =>{
+
   return(
     <Container>
       <BoxModal>
         <CategorySelector></CategorySelector>
-        <NameField></NameField>
+        <NameField placeholder='Nome da Meta'></NameField>
         <FinishGoalWrapper>
           <TitleFinishGoal>Final da meta</TitleFinishGoal>
-          <DateField></DateField>
+          <DateField type='date'></DateField>
         </FinishGoalWrapper>
         <Dialer></Dialer>
+      <Button onClick={() => setShowGoals(false)}> Criar Meta</Button>
       </BoxModal>
     </Container>
   )

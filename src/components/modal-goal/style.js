@@ -9,6 +9,17 @@ export const Container = styled.div`
   top: 0;
   z-index: 5;
   background-color: #53a9ff4a;
+  animation-name: open;
+  animation-duration: 250ms;
+
+  @keyframes open {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export const BoxModal = styled.div`
@@ -23,20 +34,32 @@ export const BoxModal = styled.div`
   background-color: #fff;
   border-radius: 9px;
   box-shadow: 0 3px 6px #00000029;
+  animation-name: growUp;
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.485, -0.340, 0.740, 1.265);
+
+  @keyframes growUp {
+    from {
+      transform: scale(0) translateY(calc(28.87% - 1.6em));
+    }
+    to {
+      transform: scale(1) translateY(calc(28.87% - 1.6em));
+    }
+  }
 `;
 
-export const NameField = styled.input.attrs(() => ({type: "text", placeholder: 'Nome da Meta'}))`
+export const NameField = styled.input`
   width: 94%;
   height: 35px;
   border-radius: 31px;
-  border: 1px solid #53A9FF;
+  border: 1px solid #53a9ff;
   margin-top: 1.5em;
   outline: none;
   padding-left: 1.5em;
-  ::placeholder{
-    color: #53A9FF;
+  ::placeholder {
+    color: #53a9ff;
   }
-`
+`;
 
 export const FinishGoalWrapper = styled.div`
   display: flex;
@@ -45,16 +68,16 @@ export const FinishGoalWrapper = styled.div`
   margin-top: 1.5em;
   width: 90%;
   height: 2em;
-`
+`;
 
 export const TitleFinishGoal = styled.h2`
-  color: #53A9FF;
-`
-export const DateField = styled.input.attrs(() => ({type: "date"}))`
-  border: 1px solid #53A9FF;
+  color: #53a9ff;
+`;
+export const DateField = styled.input`
+  border: 1px solid #53a9ff;
   border-radius: 31px;
   text-align: center;
-  color: #53A9FF;
+  color: #53a9ff;
   width: 145px;
   height: 35px;
-`
+`;
