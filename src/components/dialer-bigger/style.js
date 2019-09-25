@@ -17,7 +17,17 @@ export const ValueField = styled.div`
   width: 100%;
   height: 25vh;
   background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: #53FFB9;
 `;
+
+export const Currency = styled.span`
+  font-weight: 800;
+`
+
 export const Dialer = styled.div`
   width: 31.2vh;
   height: 45%;
@@ -44,4 +54,10 @@ export const Key = styled.button`
   margin: 1.7vh;
   outline: none;
   background-color: #fff;
+  font-size: 2em;
+  color: #53a9ff;
+  :hover{
+    background-color: #53a9ff;
+    color: #fff;
+  }
 `;

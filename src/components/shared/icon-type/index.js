@@ -3,16 +3,16 @@ import { FaHome, FaWallet, FaTimes, FaPlane, FaPlus, FaBackspace } from "react-i
 
 const DictonaryIcon = {
   error: () => <FaTimes />,
-  home: () => <FaHome />,
-  wallet: () => <FaWallet />,
-  travel: () => <FaPlane />,
-  plus: () => <FaPlus />,
-  backspace: () => <FaBackspace />
+  home: (rest) => <FaHome {...rest}/>,
+  wallet: (rest) => <FaWallet {...rest}/>,
+  travel: (rest) => <FaPlane {...rest}/>,
+  plus: (rest) => <FaPlus {...rest}/>,
+  backspace: (rest) => <FaBackspace {...rest}/>
 };
 
-const IconType = ({ icon }) =>
+const IconType = ({ icon, ...rest }) =>
   icon && !!DictonaryIcon[icon]
-    ? DictonaryIcon[icon]()
+    ? DictonaryIcon[icon](rest)
     : DictonaryIcon["error"]();
 
 export default IconType;

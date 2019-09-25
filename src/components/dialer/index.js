@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   ValueField,
@@ -6,23 +6,26 @@ import {
   Key,
 } from "./style";
 import IconType from "../shared/icon-type";
+import formatReal from "../utils/format-real";
 
 const Dialer = () => {
+  const [value, setValue] = useState('');
+
   return (
     <Container>
-      <ValueField>R$ 100.000,00</ValueField>
+      <ValueField>R$ {formatReal(value)}</ValueField>
       <KeyBox>
-        <Key >1</Key>
-        <Key>2</Key>
-        <Key>3</Key>
-        <Key>4</Key>
-        <Key>5</Key>
-        <Key>6</Key>
-        <Key>7</Key>
-        <Key>8</Key>
-        <Key>9</Key>
-        <Key>0</Key>
-        <IconType icon="backspace"></IconType>
+        <Key onClick={() => setValue(`${value}1`)}>1</Key>
+        <Key onClick={() => setValue(`${value}2`)}>2</Key>
+        <Key onClick={() => setValue(`${value}3`)}>3</Key>
+        <Key onClick={() => setValue(`${value}4`)}>4</Key>
+        <Key onClick={() => setValue(`${value}5`)}>5</Key>
+        <Key onClick={() => setValue(`${value}6`)}>6</Key>
+        <Key onClick={() => setValue(`${value}7`)}>7</Key>
+        <Key onClick={() => setValue(`${value}8`)}>8</Key>
+        <Key onClick={() => setValue(`${value}9`)}>9</Key>
+        <Key onClick={() => setValue(`${value}0`)}>0</Key>
+        <IconType icon="backspace" onClick={()=>console.log(value)}></IconType>
       </KeyBox>
     </Container>
   );
