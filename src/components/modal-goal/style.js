@@ -28,6 +28,8 @@ export const BoxModal = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
   width: 90.53%;
   height: 70.6%;
   padding: 9px;
@@ -49,7 +51,7 @@ export const BoxModal = styled.div`
 `;
 
 export const NameField = styled.input`
-  width: 94%;
+  width: 93%;
   height: 35px;
   border-radius: 31px;
   border: 1px solid #53a9ff;

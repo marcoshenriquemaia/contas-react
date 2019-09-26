@@ -6,10 +6,9 @@ import { Button } from "../goals-list/style";
 
 
 const ModalGoal = ({setShowGoals}) =>{
-
   return(
-    <Container>
-      <BoxModal>
+    <Container onClick={() => setShowGoals(false)}>
+      <BoxModal onClick={e => e.stopPropagation()}>
         <CategorySelector></CategorySelector>
         <NameField placeholder='Nome da Meta'></NameField>
         <FinishGoalWrapper>
