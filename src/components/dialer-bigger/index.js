@@ -4,10 +4,12 @@ import NavHeader from '../NavHeader'
 import IconType from '../shared/icon-type'
 import { Button } from '../goals-list/style'
 import formatReal from '../utils/format-real'
+import ExpanseModal from '../expanse-modal'
 
 const DialerBigger = () =>{
   const [dialerValue, setDialerValue] = useState('');
   const [headerType, setHeaderType] = useState('expanse');
+  const [showExpanseModal, setShowExpanseModal] = useState(false);
 
   const backspaceNumber = () =>{
     const numberArray = [...dialerValue];
@@ -17,6 +19,7 @@ const DialerBigger = () =>{
 
   return(
     <Container>
+       {showExpanseModal && <ExpanseModal />}
       <NavHeader headerType={headerType} setHeaderType={setHeaderType}></NavHeader>
       <ValueField headerType={headerType}><Currency>R$</Currency>{ formatReal(dialerValue) }</ValueField>
       <Dialer>
@@ -32,7 +35,7 @@ const DialerBigger = () =>{
         <Key onClick={() => setDialerValue(`${dialerValue}0`)}>0</Key>
         <IconType icon='backspace' onClick={() => backspaceNumber()}></IconType>
       </Dialer>
-      <Button>Continuar</Button>
+      <Button onClick={() => {setShowExpanseModal(true)}}>Continuar</Button>
     </Container>
   )
 
