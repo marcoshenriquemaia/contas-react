@@ -8,8 +8,18 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  animation: growUpDialerBigger 150ms;
   & ${Button} {
     margin-top: 13%;
+  }
+
+  @keyframes growUpDialerBigger {
+    from{
+      transform: scale(.1);
+    }
+    to{
+      transform: scale(1);
+    }
   }
 `;
 

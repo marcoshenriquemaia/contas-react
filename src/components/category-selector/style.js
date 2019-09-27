@@ -30,13 +30,13 @@ export const Container = styled.div`
       position: absolute;
       background-color: #d2e4fa;
       z-index: 15;
-      animation: growUp 150ms forwards;
+      animation: growUpCategorySelector 150ms forwards;
       background-color: #fff;
       align-items: baseline;
       flex-direction: column;
       justify-content: flex-start;
 
-      @keyframes growUp {
+      @keyframes growUpCategorySelector {
         from {
           height: 4.563em;
         }

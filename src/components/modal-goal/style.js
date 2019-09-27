@@ -36,11 +36,11 @@ export const BoxModal = styled.div`
   background-color: #fff;
   border-radius: 9px;
   box-shadow: 0 3px 6px #00000029;
-  animation-name: growUp;
+  animation-name: growUpBoxModal;
   animation-duration: 300ms;
   animation-timing-function: cubic-bezier(1.000, 0.310, 0.360, 1.6);
 
-  @keyframes growUp {
+  @keyframes growUpBoxModal {
     from {
       transform: scale(0) translateY(calc(28.87% - 1.6em));
     }
