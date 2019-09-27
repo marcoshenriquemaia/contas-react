@@ -1,6 +1,5 @@
-import styled from "styled-components";
-import { Button } from '../goals-list/style'
-
+import styled, { css } from "styled-components";
+import { Button } from "../goals-list/style";
 
 export const Container = styled.div`
   width: 100vw;
@@ -14,10 +13,10 @@ export const Container = styled.div`
   }
 
   @keyframes growUpDialerBigger {
-    from{
-      transform: scale(.1);
+    from {
+      transform: scale(0.1);
     }
-    to{
+    to {
       transform: scale(1);
     }
   }
@@ -31,12 +30,17 @@ export const ValueField = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 2em;
-  color: #53FFB9;
+  color: #53ffb9;
+  ${({ headerType }) =>
+    headerType == "expanse" &&
+    css`
+      color: #FF5353;
+    `}
 `;
 
 export const Currency = styled.span`
   font-weight: 800;
-`
+`;
 
 export const Dialer = styled.div`
   width: 31.2vh;
@@ -66,7 +70,7 @@ export const Key = styled.button`
   background-color: #fff;
   font-size: 2em;
   color: #53a9ff;
-  :hover{
+  :hover {
     background-color: #53a9ff;
     color: #fff;
   }

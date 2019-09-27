@@ -6,8 +6,9 @@ import { Button } from '../goals-list/style'
 import formatReal from '../utils/format-real'
 
 const DialerBigger = () =>{
-
   const [dialerValue, setDialerValue] = useState('');
+  const [headerType, setHeaderType] = useState('expanse');
+
   const backspaceNumber = () =>{
     const numberArray = [...dialerValue];
     numberArray.pop();
@@ -16,8 +17,8 @@ const DialerBigger = () =>{
 
   return(
     <Container>
-      <NavHeader></NavHeader>
-      <ValueField><Currency>R$</Currency>{ formatReal(dialerValue) }</ValueField>
+      <NavHeader headerType={headerType} setHeaderType={setHeaderType}></NavHeader>
+      <ValueField headerType={headerType}><Currency>R$</Currency>{ formatReal(dialerValue) }</ValueField>
       <Dialer>
         <Key onClick={() => setDialerValue(`${dialerValue}1`)}>1</Key>
         <Key onClick={() => setDialerValue(`${dialerValue}2`)}>2</Key>

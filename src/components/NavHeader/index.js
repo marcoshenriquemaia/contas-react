@@ -1,12 +1,13 @@
 import React from 'react'
 import { Container, Revenue, Expanse, Transfer } from './style'
 
-const NavHeader = () =>{
+const NavHeader = prop =>{
+  const { headerType, setHeaderType } = prop
   return(
     <Container>
-      <Revenue>Receita</Revenue>
-      <Expanse>Despesa</Expanse>
-      <Transfer>Transferência</Transfer>
+      <Revenue headerType={headerType} onClick={() => setHeaderType('revenue')}>Receita </Revenue>
+      <Expanse headerType={headerType} onClick={() => setHeaderType('expanse')}>Despesa</Expanse>
+      <Transfer headerType={headerType} onClick={() => setHeaderType('transfer')}>Transferência</Transfer>
     </Container>
   )
 }

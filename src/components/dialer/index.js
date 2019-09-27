@@ -11,6 +11,12 @@ import formatReal from "../utils/format-real";
 const Dialer = () => {
   const [value, setValue] = useState('');
 
+  const backspaceNumber = () =>{
+    const numberArray = [...value];
+    numberArray.pop();
+    setValue(numberArray.join(''))
+  }
+
   return (
     <Container>
       <ValueField>R$ {formatReal(value)}</ValueField>
@@ -25,7 +31,7 @@ const Dialer = () => {
         <Key onClick={() => setValue(`${value}8`)}>8</Key>
         <Key onClick={() => setValue(`${value}9`)}>9</Key>
         <Key onClick={() => setValue(`${value}0`)}>0</Key>
-        <IconType icon="backspace" onClick={()=>console.log(value)}></IconType>
+        <IconType icon="backspace" onClick={()=>backspaceNumber()}></IconType>
       </KeyBox>
     </Container>
   );
