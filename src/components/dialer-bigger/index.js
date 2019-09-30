@@ -4,7 +4,7 @@ import NavHeader from '../NavHeader'
 import IconType from '../shared/icon-type'
 import { Button } from '../goals-list/style'
 import formatReal from '../utils/format-real'
-import ExpanseModal from '../expanse-modal'
+import ModalExpanse from '../modal-expanse'
 
 const DialerBigger = () =>{
   const [dialerValue, setDialerValue] = useState('');
@@ -19,7 +19,7 @@ const DialerBigger = () =>{
 
   return(
     <Container>
-       {showExpanseModal && <ExpanseModal />}
+       {showExpanseModal && <ModalExpanse />}
       <NavHeader headerType={headerType} setHeaderType={setHeaderType}></NavHeader>
       <ValueField headerType={headerType}><Currency>R$</Currency>{ formatReal(dialerValue) }</ValueField>
       <Dialer>

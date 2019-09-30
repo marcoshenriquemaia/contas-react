@@ -1,5 +1,7 @@
 import React from "react";
 import { FaHome, FaWallet, FaTimes, FaPlane, FaPlus, FaBackspace } from "react-icons/fa";
+import { MdClose } from "react-icons/md";
+
 
 const DictonaryIcon = {
   error: () => <FaTimes />,
@@ -7,7 +9,8 @@ const DictonaryIcon = {
   wallet: (rest) => <FaWallet {...rest}/>,
   travel: (rest) => <FaPlane {...rest}/>,
   plus: (rest) => <FaPlus {...rest}/>,
-  backspace: (rest) => <FaBackspace {...rest}/>
+  backspace: (rest) => <FaBackspace {...rest}/>,
+  close: () => <MdClose />,
 };
 
 const IconType = ({ icon, ...rest }) =>

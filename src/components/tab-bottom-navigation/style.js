@@ -9,6 +9,7 @@ export const Container = styled.div`
   width: 100%;
   height: 6.562%;
   box-shadow: 0px -12px 6px rgba(0,0,0,.07);
+  z-index: 50;
 `
 
 export const Wrapper = styled.div`
