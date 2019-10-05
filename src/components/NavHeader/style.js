@@ -13,6 +13,7 @@ export const Revenue = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
   color: #fff;
   background-image: linear-gradient(to top, #53a9ff, #328de8);
   ${({ headerType }) =>
@@ -29,6 +30,7 @@ export const Expanse = styled.div`
   justify-content: center;
   align-items: center;
   color: #fff;
+  border: none;
   background-image: linear-gradient(to top, #53a9ff, #328de8);
   ${({ headerType }) =>
     headerType == "expanse" &&
@@ -44,6 +46,7 @@ export const Transfer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
   color: #fff;
   background-image: linear-gradient(to top, #53a9ff, #328de8);
   ${({ headerType }) =>

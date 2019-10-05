@@ -19,7 +19,7 @@ const DialerBigger = () =>{
 
   return(
     <Container>
-       {showExpanseModal && <ModalExpanse />}
+       {showExpanseModal && <ModalExpanse headerType={headerType} setHeaderType={setHeaderType} />}
       <NavHeader headerType={headerType} setHeaderType={setHeaderType}></NavHeader>
       <ValueField headerType={headerType}><Currency>R$</Currency>{ formatReal(dialerValue) }</ValueField>
       <Dialer>

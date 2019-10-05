@@ -1,39 +1,62 @@
-import React, { useState } from 'react'
-import { Container, TitleCategory, WrapperCategory, SubTitleCategory } from './style.js'
-import IconBox from '../icon-box/index.js'
-import ButtonSelector from '../shared/button-selector/index.js'
-import SelectableItem from '../selectable-item/index.js'
+import React, { useState } from "react";
+import { Container, WapperSelector } from "./style.js";
+import SelectableItem from "../selectable-item/index.js";
+import ButtonSelector from "../shared/button-selector/index.js";
 
 const categoryItem = {
-  category: 'travel',
-  subCategory: ['Chácara', 'Praia']
-}
+  category: "travel",
+  subCategory: ["Chácara", "Praia"]
+};
 
-const categorys = [categoryItem, categoryItem];
+const categorys = [
+  categoryItem,
+  { ...categoryItem, subCategory: ["Praia"] },
+  { ...categoryItem, subCategory: ["Clube"] },
+  categoryItem,
+  categoryItem,
+  categoryItem,
+  categoryItem,
+  categoryItem,
+  categoryItem,
+  categoryItem,
+  categoryItem,
+  categoryItem,
+  categoryItem,
+];
 
-const CategorySelector = () =>{
-
+const CategorySelector = () => {
   const [selecting, setSelecting] = useState(false);
   const [selected, setSelected] = useState(categoryItem);
 
-  return(
-     selecting ? <Container onClick={() => setSelecting(false)} selecting={selecting}> 
-      <SelectableItem categorys={categorys}></SelectableItem>
-      <SelectableItem></SelectableItem>
-      <SelectableItem></SelectableItem>
-      <SelectableItem></SelectableItem>
-      <SelectableItem></SelectableItem>
-     </Container> 
-     : 
-     <Container onClick={() => setSelecting(true)} selecting={selecting} >
-      <IconBox icon={selected.category}></IconBox>
-      <WrapperCategory>
-        <TitleCategory>{selected.category}</TitleCategory>
-        <SubTitleCategory>{selected.subCategory[0]}</SubTitleCategory>
-      </WrapperCategory>
-      <ButtonSelector></ButtonSelector>
-    </Container> 
-  )
-}
+  const handleSelect = item => {
+    setSelecting(false);
+    setSelected(item);
+  };
+
+
+  return (
+    <WapperSelector>
+      <Container selecting={selecting}>
+        <SelectableItem
+          icon={selected.category}
+          title={selected.category}
+          subTitle={selected.subCategory[0]}
+          onClick={() => setSelecting(!selecting)}
+        >
+          <ButtonSelector />
+        </SelectableItem>
+        {selecting &&
+          categorys.map(item => (
+            <SelectableItem
+              icon={item.category}
+              title={item.category}
+              subTitle={item.subCategory[0]}
+              onClick={() => handleSelect(item)}
+            ></SelectableItem>
+          ))}
+      </Container>
+    </WapperSelector>
+  );
+};
 
 export default CategorySelector;

@@ -15,11 +15,12 @@ import WalletSelector from "../wallet-selector";
 import PortionsBox from "../portions-box";
 import TagBox from "../tag-box";
 import { Button } from "../goals-list/style";
+import { NavLink } from 'react-router-dom'
 
-const ModalExpanse = () => {
+const ModalExpanse = ({headerType, setHeaderType}) => {
   return (
     <Container>
-      <NavHeader></NavHeader>
+      <NavHeader headerType={headerType} setHeaderType={setHeaderType}></NavHeader>
       <ContainerWallet>
         <ValueField>
           <Currency>R$</Currency>
@@ -37,7 +38,7 @@ const ModalExpanse = () => {
         </WrapperWallet>
         <TagBox></TagBox>
         <Obs placeholder='Obs...'></Obs>
-        <Button></Button>
+        <NavLink to='/expanses'><Button></Button> </NavLink> 
       </ContainerWallet>
     </Container>
   );

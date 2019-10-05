@@ -2,14 +2,15 @@ import React from 'react'
 import { Container, WrapperText, Title, SubTitle } from './style'
 import IconBox from '../icon-box'
 
-const SelectableItem = () =>{
+const SelectableItem = ({icon, title, subTitle, children, ...rest}) =>{
   return(
-    <Container>
-      <IconBox></IconBox>
+    <Container {...rest}>
+      <IconBox icon={icon}></IconBox>
       <WrapperText>
-        <Title>Viagem</Title>
-        <SubTitle>Praia</SubTitle>
+        <Title>{title}</Title>
+        <SubTitle>{subTitle}</SubTitle>
       </WrapperText>
+      {children}
     </Container>
 
   )

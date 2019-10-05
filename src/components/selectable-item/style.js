@@ -1,15 +1,19 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
+  width: calc(100%);
   height: 4em;
-  background-color: #d2e4fa;
-  margin-bottom: .75em;
-  border-radius: 9px;
   display: flex;
+  border-radius: 9px;
   align-items: center;
-  justify-content: space-evenly;
-`
+  animation: shrink 150ms;
+  background-color: #d2e4fa;
+  z-index: 15;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  padding: 0 8px;
+  box-sizing: border-box;
+`;
 
 export const WrapperText = styled.div`
   width: 65%;
@@ -17,7 +21,7 @@ export const WrapperText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 2em;
+  margin-left: 20px;
 `;
 
 export const Title = styled.h1`

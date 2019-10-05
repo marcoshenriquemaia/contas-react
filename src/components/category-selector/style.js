@@ -1,51 +1,36 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  width: calc(100% - 18px);
+  width: 100%;
   height: 4em;
-  background-color: #d2e4fa;
-  display: flex;
-  border-radius: 9px;
-  align-items: center;
-  justify-content: space-around;
-  animation: shrink 150ms;
-  position: absolute;
-  top: 9px;
-  background-color: #d2e4fa;
   z-index: 15;
-
-  @keyframes shrink {
-    from {
-      height: calc(100% - 18px);
-    }
-    to {
-      height: 4.563em;
-    }
+  background-color: #fff;
+  transition-duration: 1000ms;
+  transition-timing-function: cubic-bezier(0.315, 1.070, 0.865, 1.320);
+  position: absolute;
+  & > :first-child {
+    margin-bottom: 0;
   }
 
   ${({ selecting }) =>
     selecting &&
     css`
-      width: calc(100% - 18px);
-      position: absolute;
-      background-color: #d2e4fa;
-      z-index: 15;
-      animation: growUpCategorySelector 150ms forwards;
-      background-color: #fff;
-      align-items: baseline;
+      height: calc(70.6vh);
       flex-direction: column;
       justify-content: flex-start;
-
-      @keyframes growUpCategorySelector {
-        from {
-          height: 4.563em;
-        }
-        to {
-          height: calc(100% - 18px);
-        }
+      overflow-y: scroll;
+      & > :first-child {
+        margin-bottom: 1em;
       }
     `}
 `;
+
+export const WapperSelector = styled.div`
+  width: 100%;
+  height: 4em;
+  position: relative;
+`
+
 export const WrapperCategory = styled.div`
   width: 50%;
   height: 100%;

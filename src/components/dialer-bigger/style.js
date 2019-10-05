@@ -2,13 +2,14 @@ import styled, { css } from "styled-components";
 import { Button } from "../goals-list/style";
 
 export const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
   animation: growUpDialerBigger 150ms;
-  & ${Button} {
+  position: relative;
+  & > ${Button} {
     margin-top: 13%;
   }
 
