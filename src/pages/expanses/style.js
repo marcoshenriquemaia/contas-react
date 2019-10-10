@@ -16,17 +16,8 @@ export const ContainerExpanses = styled.div`
   transform: translateY(-2.3em);
 `
 
-export const ExpansesBox = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 82.937%;
-  min-height: 51.43%;
-  border: 1px solid #53a9ff69;
-  border-radius: 9px;
-  background-color: #fff;
-  overflow-y: scroll;
-  padding: 1em;
-  margin-bottom: 1em;
-  margin-top: 1em;
+export const TextDate = styled.span`
+  position: fixed;
+  color: #707070;
+  font-weight: bold;
 `

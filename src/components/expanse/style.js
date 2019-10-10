@@ -2,29 +2,40 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 4em;
+  min-height: 4em;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1em;
 `;
 
-export const WrapperText = styled.div`
-  width: 40%;
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 35%;
   height: 90%;
-  background-color: red;
 `;
 
-export const Title = styled.h1`
+export const Principal = styled.h1`
   color: #707070;
   font-weight: bold;
 `
 
-export const SubTitle = styled.h2`
+export const Sub = styled.h2`
   color: #707070;  
 `
 
-export const WrapperValue = styled.div`
-  width: 30%;
-  height: 90%;
-  background-color: blue;
+export const Status = styled.h2`
+  color: #707070;  
+  font-size: .8em;
 `
+
+export const WrapperValue = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  width: 35%;
+  height: 90%;
+`;

@@ -11,11 +11,11 @@ import {
 } from "./style";
 import NavHeader from "../NavHeader";
 import { Currency } from "../dialer-bigger/style";
-import WalletSelector from "../wallet-selector";
 import PortionsBox from "../portions-box";
 import TagBox from "../tag-box";
 import { Button } from "../goals-list/style";
 import { NavLink } from 'react-router-dom'
+import CategorySelector from "../category-selector";
 
 const ModalExpanse = ({headerType, setHeaderType}) => {
   return (
@@ -26,8 +26,8 @@ const ModalExpanse = ({headerType, setHeaderType}) => {
           <Currency>R$</Currency>
           <Value>100.000,00</Value>
         </ValueField>
-        <WalletSelector></WalletSelector>
-        <WalletSelector></WalletSelector>
+        <CategorySelector></CategorySelector>
+        <CategorySelector></CategorySelector>
         <WrapperWallet>
           <TitleWallet>Data</TitleWallet>
           <Date type="date"></Date>

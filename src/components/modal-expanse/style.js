@@ -18,8 +18,8 @@ export const Container = styled.div`
 `
 
 export const ContainerWallet = styled.div`
-  width: 100%;
-  height: 83%;
+  width: 95%;
+  height: 88%;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -50,7 +50,7 @@ export const WrapperWallet = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 85%;
+  width: 100%;
 `
 
 export const TitleWallet = styled.h2`
@@ -69,7 +69,7 @@ export const Date = styled.input`
   text-align: center;
 `
 export const Obs = styled.textarea`
-  width: 95%;
+  width: 100%;
   height: 25%;
   border: 1px solid #53A9FF91;
   border-radius: 9px;

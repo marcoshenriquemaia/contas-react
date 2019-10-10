@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 95%;
+  width: 100%;
   height: 2em;
   border: 1px solid #53A9FF8F;
   border-radius: 9px;
