@@ -6,14 +6,13 @@ export const Container = styled.div`
   border: 1px solid #53A9FF8F;
   border-radius: 9px;
   padding: 2px;
-  box-sizing: border-box; 
   display: flex;
-  overflow-x: scroll;
+  align-items: center;
+  box-sizing: border-box;
   position: relative;
 `
 
 export const ButtonAdd = styled.button`
-  border: none;
   background-color: #fff;
   border: 1px solid #53A9FF8F;
   border-radius: 7px;
@@ -21,13 +20,19 @@ export const ButtonAdd = styled.button`
   justify-content: center;
   align-items: center;
   color: #53A9FF;
-  position: absolute;
-  right: 5px;
+  right: 2px;
   height: calc(100% - 5px);
   outline: none;
+  position: sticky;
 `
 
 export const Text = styled.span`
   margin-right: 5px;
   font-size: 1.2em;
+`
+
+export const Input = styled.input`
+  width: fit-content;
+  height: 100%;
+  border: 1px solid black;
 `

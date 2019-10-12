@@ -17,14 +17,14 @@ import { Button } from "../goals-list/style";
 import { NavLink } from 'react-router-dom'
 import CategorySelector from "../category-selector";
 
-const ModalExpanse = ({headerType, setHeaderType}) => {
+const ModalExpanse = ({headerType, setHeaderType, dialerValue}) => {
   return (
     <Container>
       <NavHeader headerType={headerType} setHeaderType={setHeaderType}></NavHeader>
       <ContainerWallet>
         <ValueField>
           <Currency>R$</Currency>
-          <Value>100.000,00</Value>
+          <Value>{dialerValue}</Value>
         </ValueField>
         <CategorySelector></CategorySelector>
         <CategorySelector></CategorySelector>

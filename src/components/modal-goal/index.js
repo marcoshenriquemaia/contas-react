@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Container, BoxModal, NameField, FinishGoalWrapper, TitleFinishGoal, DateField } from './style'
 import CategorySelector from '../category-selector'
 import Dialer from '../dialer'
 import { Button } from "../goals-list/style";
+import WalletContext from '../context-wallet'
 
 
 const ModalGoal = ({setShowGoals}) =>{
+  const informacoes = useContext(WalletContext);
+  informacoes.setValue('marascsaasd');
+  console.log(informacoes);
   return(
     <Container onClick={() => setShowGoals(false)}>
       <BoxModal onClick={e => e.stopPropagation()}>
