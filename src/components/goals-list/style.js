@@ -9,7 +9,6 @@ export const Container = styled.div`
   border: 1px solid #53A9FF69;
   border-radius: 9px;
   background-color: #fff;
-  overflow-y: scroll;
   padding: 1em;
   transform: translateY(-1.3em);
   margin-top: 18px;

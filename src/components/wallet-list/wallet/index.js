@@ -3,15 +3,15 @@ import IconBox from "../../icon-box";
 import Value from "../../value";
 import { Container, WrapperType, Type, Name } from "./style";
 
-const Wallet = ({ cor, funcao }) => {
+const Wallet = ({ cor, funcao, title, name, value, icon}) => {
   return (
     <Container onClick={funcao}>
-      <IconBox cor={cor}></IconBox>
+      <IconBox cor={cor} icon={icon}></IconBox>
       <WrapperType>
-        <Type>Carteira</Type>
-        <Name>nome</Name>
+        <Type>{title}</Type>
+        <Name>{name}</Name>
       </WrapperType>
-      <Value value="100.000,00"></Value>
+      <Value value={value}></Value>
     </Container>
   );
 };

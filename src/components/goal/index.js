@@ -3,17 +3,17 @@ import IconBox from "../icon-box";
 import Value from "../value";
 import { Container, Wrapper, Title, Bar, ProgressBar } from "./style.js";
 
-const Goal = () => {
+const Goal = ({title, icon, value}) => {
   return (
     <Container>
-      <IconBox></IconBox>
+      <IconBox icon={icon}></IconBox>
       <Wrapper>
-        <Title>Reserva</Title>
+        <Title>{title}</Title>
         <Bar>
           <ProgressBar></ProgressBar>
         </Bar>
       </Wrapper>
-      <Value value="100.000,00"></Value>
+      <Value value={value}></Value>
     </Container>
   );
 };

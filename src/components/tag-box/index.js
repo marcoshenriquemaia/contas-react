@@ -9,7 +9,7 @@ const TagBox = () => {
   return (
     <Container>
       {tags.map((tag, index) =>  <Tag key={`key-tag${index}`} conteudo={tag}></Tag>)}
-      <Input onBlur={({target}) => setTags([...tags, target.value])}/>
+      {/* <Input onBlur={({target}) => setTags([...tags, target.value])}/> */}
       <ButtonAdd>
         <Text>Adicionar</Text>
         <IconType icon="plus"></IconType>

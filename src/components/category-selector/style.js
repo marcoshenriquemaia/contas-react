@@ -5,8 +5,6 @@ export const Container = styled.div`
   height: 4em;
   z-index: 15;
   background-color: #fff;
-  transition-duration: 1000ms;
-  transition-timing-function: cubic-bezier(0.315, 1.070, 0.865, 1.320);
   position: absolute;
   & > :first-child {
     margin-bottom: 0;
@@ -15,10 +13,21 @@ export const Container = styled.div`
   ${({ selecting }) =>
     selecting &&
     css`
-      height: calc(70.6vh);
       flex-direction: column;
       justify-content: flex-start;
       overflow-y: scroll;
+      animation-name: openCategorySelector;
+      animation-duration: 250ms;
+      animation-fill-mode: forwards;
+
+      @keyframes openCategorySelector {
+        from {
+          height: 4em;
+        }
+        to {
+          height: calc(70.6vh);
+        }
+      }
       & > :first-child {
         margin-bottom: 1em;
       }
@@ -29,7 +38,7 @@ export const WapperSelector = styled.div`
   width: 100%;
   height: 4em;
   position: relative;
-`
+`;
 
 export const WrapperCategory = styled.div`
   width: 50%;

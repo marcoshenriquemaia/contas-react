@@ -6,7 +6,7 @@ const Tag = ({conteudo}) =>{
   return(
     <Container>
       <Text>{conteudo}</Text>
-      {/* <IconType icon='close'></IconType> */}
+      <IconType icon='close'></IconType>
     </Container>
   )
 }

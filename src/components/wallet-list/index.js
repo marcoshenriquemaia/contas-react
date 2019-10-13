@@ -1,30 +1,24 @@
 import React, { useContext } from "react";
 import Wallet from "./wallet";
 import { Container } from "./style";
+import WalletContext from "../context-wallet";
 
 const WalletList = () => {
+  const walletState = useContext(WalletContext);
   return (
     <Container>
-      <Wallet cor="red"></Wallet>
-      <Wallet cor="purple"></Wallet>
-      <Wallet cor="#ff9966"></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
-      <Wallet></Wallet>
+      {walletState.arrayWallet.map(
+        ({ color, title, name, value, icon }, index) => (
+          <Wallet
+            key={`key-wallet-${index}`}
+            cor={color}
+            title={title}
+            name={name}
+            value={value}
+            icon={icon}
+          />
+        )
+      )}
     </Container>
   );
 };
