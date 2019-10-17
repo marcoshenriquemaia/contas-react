@@ -28,6 +28,7 @@ const goalInformation = {
     icon: 'travel',
   },
 }
+
 const arrayGols = [goalInformation, goalInformation]
 
 const arrayWallet = [wallet, {...wallet, title: 'Nubank', name: 'Sabrina', value: 2000, color: 'blue'}, {...wallet, title: 'Santander', color: 'purple'}];

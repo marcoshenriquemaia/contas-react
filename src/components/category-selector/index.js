@@ -33,6 +33,7 @@ const CategorySelector = () => {
     setSelected(item);
   };
 
+  console.log()
 
   return (
     <WapperSelector>
@@ -41,13 +42,14 @@ const CategorySelector = () => {
           icon={selected.category}
           title={selected.category}
           subTitle={selected.subCategory[0]}
-          onClick={() => setSelecting(!selecting)}
+          onClick={() => {setSelecting(!selecting)}}
         >
           <ButtonSelector />
         </SelectableItem>
         {selecting &&
-          categorys.map(item => (
+          categorys.map((item, index) => (
             <SelectableItem
+              key={`key-category-${index}`}
               icon={item.category}
               title={item.category}
               subTitle={item.subCategory[0]}
