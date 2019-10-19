@@ -29,7 +29,7 @@ const goalInformation = {
   },
 }
 
-const arrayGols = [goalInformation, goalInformation]
+const arrayGols = []
 
 const arrayWallet = [wallet, {...wallet, title: 'Nubank', name: 'Sabrina', value: 2000, color: 'blue'}, {...wallet, title: 'Santander', color: 'purple'}];
 
@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <WalletProvider value={{arrayWallet: teste, setTeste, goalsList, setGoal}}>
       <Container>
-        {showGoals && <ModalGoals setShowGoals={setShowGoals}></ModalGoals>}
+        {showGoals && <ModalGoals setShowGoals={setShowGoals} setArrayGols={setGoal} oldValue={goalsList}></ModalGoals>}
         <TotalValue></TotalValue>
         <Wrapper>
           <WalletList></WalletList>

@@ -24,7 +24,7 @@ const categorys = [
   categoryItem,
 ];
 
-const CategorySelector = () => {
+const CategorySelector = ({setCategory, setSubCategory}) => {
   const [selecting, setSelecting] = useState(false);
   const [selected, setSelected] = useState(categoryItem);
 
@@ -33,7 +33,11 @@ const CategorySelector = () => {
     setSelected(item);
   };
 
-  console.log()
+  const handleOnClick = () =>{
+    setSelecting(!selecting);
+    !!setCategory && setCategory(selected.category);
+    !!setSubCategory && setSubCategory(selected.subCategory[0]);
+  }
 
   return (
     <WapperSelector>
@@ -42,7 +46,7 @@ const CategorySelector = () => {
           icon={selected.category}
           title={selected.category}
           subTitle={selected.subCategory[0]}
-          onClick={() => {setSelecting(!selecting)}}
+          onClick={handleOnClick}
         >
           <ButtonSelector />
         </SelectableItem>

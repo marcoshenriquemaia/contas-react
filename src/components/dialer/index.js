@@ -8,8 +8,7 @@ import {
 import IconType from "../shared/icon-type";
 import formatReal from "../utils/format-real";
 
-const Dialer = () => {
-  const [value, setValue] = useState('');
+const Dialer = ({setValue, value}) => {
 
   const backspaceNumber = () =>{
     const numberArray = [...value];
