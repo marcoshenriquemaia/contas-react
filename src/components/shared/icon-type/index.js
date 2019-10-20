@@ -10,7 +10,7 @@ const DictonaryIcon = {
   travel: (rest) => <FaPlane {...rest}/>,
   plus: (rest) => <FaPlus {...rest}/>,
   backspace: (rest) => <FaBackspace {...rest}/>,
-  close: () => <MdClose />,
+  close: (rest) => <MdClose {...rest}/>,
 };
 
 const IconType = ({ icon, ...rest }) =>

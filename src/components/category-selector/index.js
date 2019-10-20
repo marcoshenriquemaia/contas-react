@@ -24,11 +24,14 @@ const categorys = [
   categoryItem,
 ];
 
-const CategorySelector = ({setCategory, setSubCategory}) => {
+const CategorySelector = props => {
+  const {setCategory, setSubCategory, setWalletSelected, setCategorySelected, type} = props
   const [selecting, setSelecting] = useState(false);
   const [selected, setSelected] = useState(categoryItem);
 
   const handleSelect = item => {
+    type == 'wallet' && setWalletSelected({category: item.category, subCategory: item.subCategory[0], icon: item.category});
+    type == 'category' && setCategorySelected({category: item.category, subCategory: item.subCategory[0], icon: item.category});
     setSelecting(false);
     setSelected(item);
   };

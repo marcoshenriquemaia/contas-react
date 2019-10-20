@@ -38,6 +38,7 @@ const Home = () => {
   const [teste, setTeste] = useState(arrayWallet);
   const [goalsList, setGoal] = useState(arrayGols);
 
+
   return (
     <WalletProvider value={{arrayWallet: teste, setTeste, goalsList, setGoal}}>
       <Container>

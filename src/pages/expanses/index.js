@@ -1,22 +1,21 @@
-import React from 'react'
-import { Container, ContainerExpanses } from './style'
-import TotalValue from '../../components/total-value'
-import Expanse from '../../components/expanse'
-import ExpansesBox from '../../components/expanses-box'
+import React, { useState, useContext } from "react";
+import { Container, ContainerExpanses } from "./style";
+import TotalValue from "../../components/total-value";
+import ExpansesBox from "../../components/expanses-box";
+import ExpansesContext from "../../components/context-expanses";
 
-const Expanses = () =>{
-  return(
-    <Container>
-      <TotalValue/>
-      <ContainerExpanses>
-        <ExpansesBox></ExpansesBox>
-        <ExpansesBox></ExpansesBox>
-        <ExpansesBox></ExpansesBox>
-        <ExpansesBox></ExpansesBox>
-        <ExpansesBox></ExpansesBox>
-      </ContainerExpanses>
-    </Container>
-  )
-}
+const Expanses = () => {
+  const {expansesInformation, setExpansesInformation} = useContext(ExpansesContext);
+
+  console.log(expansesInformation);
+  return (
+      <Container>
+        <TotalValue />
+        <ContainerExpanses>
+          <ExpansesBox expansesInformation={expansesInformation}></ExpansesBox>
+        </ContainerExpanses>
+      </Container>
+  );
+};
 
 export default Expanses;

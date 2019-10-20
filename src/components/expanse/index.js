@@ -2,16 +2,18 @@ import React from "react";
 import { Container, Wrapper, Principal, Sub, WrapperValue } from "./style";
 import IconBox from "../icon-box";
 
-const Expanse = () => {
+const Expanse = (prop) => {
+  const { value, wallet, category, dateExpanse, portionsValue, obs, tagList } = prop.expanse;
+
   return (
     <Container>
-      <IconBox icon="wallet"></IconBox>
+      <IconBox icon={category.icon}></IconBox>
       <Wrapper>
-        <Principal>Tipo</Principal>
-        <Sub>Conta</Sub>
+        <Principal>{category.category}</Principal>
+        <Sub>{category.subCategory}</Sub>
       </Wrapper>
       <WrapperValue>
-        <Principal>R$ 100,00</Principal>
+        <Principal>R$ {value}</Principal>
         <Sub>não pago</Sub>
       </WrapperValue>
     </Container>

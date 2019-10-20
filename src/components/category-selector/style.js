@@ -19,6 +19,7 @@ export const Container = styled.div`
       animation-name: openCategorySelector;
       animation-duration: 250ms;
       animation-fill-mode: forwards;
+      z-index: 20;
 
       @keyframes openCategorySelector {
         from {

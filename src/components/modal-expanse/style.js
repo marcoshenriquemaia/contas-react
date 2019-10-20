@@ -67,10 +67,14 @@ export const Date = styled.input`
   font-size: 1.5em;
   color: #707070;
   text-align: center;
+  outline: none;
 `
 export const Obs = styled.textarea`
   width: 100%;
   height: 25%;
   border: 1px solid #53A9FF91;
   border-radius: 9px;
+  outline: none;
+  padding: 5px;
+  box-sizing: border-box;
 `

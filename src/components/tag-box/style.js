@@ -10,6 +10,7 @@ export const Container = styled.div`
   align-items: center;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
 `
 
 export const ButtonAdd = styled.button`
@@ -23,7 +24,7 @@ export const ButtonAdd = styled.button`
   right: 2px;
   height: calc(100% - 5px);
   outline: none;
-  position: sticky;
+  position: absolute;
 `
 
 export const Text = styled.span`
@@ -32,7 +33,8 @@ export const Text = styled.span`
 `
 
 export const Input = styled.input`
-  width: fit-content;
+  width: 100%;
   height: 100%;
-  border: 1px solid black;
+  border: none;
+  outline: none
 `

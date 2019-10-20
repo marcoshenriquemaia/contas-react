@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import {
   Container,
   ValueField,
@@ -16,8 +16,46 @@ import TagBox from "../tag-box";
 import { Button } from "../goals-list/style";
 import { NavLink } from 'react-router-dom'
 import CategorySelector from "../category-selector";
+import ExpansesContext from "../context-expanses";
 
 const ModalExpanse = ({headerType, setHeaderType, dialerValue}) => {
+  const [walletSelected, setWalletSelected] = useState({});
+  const [categorySelected, setCategorySelected] = useState({});
+  const [dateExpanse, setDateExpanse] = useState('');
+  const [portionsValue, setPortionsValue] = useState(null);
+  const [tagList, setTagList] = useState([]);
+  const [obs, setObs] = useState('');
+
+  const {setExpansesInformation, expansesInformation} = useContext(ExpansesContext);
+
+  const handleOnChangeDate = ({target: {value}}) =>{
+    setDateExpanse(value)
+  }
+
+  const handleOnChangeObs = ({target: {value}}) =>{
+    setObs(value);
+  }
+
+  const handleClickButton = () =>{
+    setExpansesInformation([...expansesInformation, {
+      value: dialerValue,
+      wallet: {
+        category: walletSelected.category,
+        subCategory: walletSelected.subCategory,
+        icon: walletSelected.icon,
+      },
+      category: {
+        category: categorySelected.category,
+        subCategory: categorySelected.subCategory,
+        icon: categorySelected.icon,
+      },
+      dateExpanse,
+      portionsValue,
+      obs,
+      tagList,
+    }])
+  }
+
   return (
     <Container>
       <NavHeader headerType={headerType} setHeaderType={setHeaderType}></NavHeader>
@@ -26,19 +64,19 @@ const ModalExpanse = ({headerType, setHeaderType, dialerValue}) => {
           <Currency>R$</Currency>
           <Value>{dialerValue}</Value>
         </ValueField>
-        <CategorySelector></CategorySelector>
-        <CategorySelector></CategorySelector>
+        <CategorySelector type='wallet' setWalletSelected={setWalletSelected}></CategorySelector>
+        <CategorySelector type='category' setCategorySelected={setCategorySelected}></CategorySelector>
         <WrapperWallet>
           <TitleWallet>Data</TitleWallet>
-          <Date type="date"></Date>
+          <Date type="date" onChange={handleOnChangeDate}></Date>
         </WrapperWallet>
         <WrapperWallet>
           <TitleWallet>Parcelas </TitleWallet>
-          <PortionsBox>1x</PortionsBox>
+          <PortionsBox setPortionsValue={setPortionsValue}>1x</PortionsBox>
         </WrapperWallet>
-        <TagBox></TagBox>
-        <Obs placeholder='Obs...'></Obs>
-        <NavLink to='/expanses'><Button></Button> </NavLink> 
+        <TagBox setTagList={setTagList} tagList={tagList}></TagBox>
+        <Obs placeholder='Obs...' onChange={handleOnChangeObs}></Obs>
+        <NavLink to='/expanses'><Button onClick={handleClickButton}>Concluir</Button> </NavLink> 
       </ContainerWallet>
     </Container>
   );
