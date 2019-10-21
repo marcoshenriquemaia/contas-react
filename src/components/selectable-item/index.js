@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, WrapperText, Title, SubTitle } from './style'
 import IconBox from '../icon-box'
 

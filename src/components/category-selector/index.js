@@ -4,28 +4,18 @@ import SelectableItem from "../selectable-item/index.js";
 import ButtonSelector from "../shared/button-selector/index.js";
 
 const categoryItem = {
-  category: "travel",
-  subCategory: ["Chácara", "Praia"]
+  category: "Categoria",
+  subCategory: ['Nome',"Chácara", "Praia"]
 };
 
 const categorys = [
   categoryItem,
   { ...categoryItem, subCategory: ["Praia"] },
   { ...categoryItem, subCategory: ["Clube"] },
-  categoryItem,
-  categoryItem,
-  categoryItem,
-  categoryItem,
-  categoryItem,
-  categoryItem,
-  categoryItem,
-  categoryItem,
-  categoryItem,
-  categoryItem,
 ];
 
 const CategorySelector = props => {
-  const {setCategory, setSubCategory, setWalletSelected, setCategorySelected, type} = props
+  const {setCategory, setSubCategory, setWalletSelected, setCategorySelected, type} = props;
   const [selecting, setSelecting] = useState(false);
   const [selected, setSelected] = useState(categoryItem);
 

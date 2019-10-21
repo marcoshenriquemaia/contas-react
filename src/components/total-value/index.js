@@ -1,11 +1,13 @@
 import React from "react";
 import { Container, Currency, Total } from "./style.js";
+import formatReal from '../utils/format-real'
 
-const TotalValue = ({setMostraMeta}) => {
+const TotalValue = ({totalValueExpanse}) => {
+  
   return (
     <Container>
       <Currency>R$</Currency>
-      <Total>100.000,00</Total>
+      <Total>{totalValueExpanse}</Total>
     </Container>
   );
 };

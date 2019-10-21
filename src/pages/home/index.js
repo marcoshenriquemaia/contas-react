@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TotalValue from "../../components/total-value";
 import WalletList from "../../components/wallet-list";
 import GoalsList from "../../components/goals-list";
@@ -35,15 +35,23 @@ const arrayWallet = [wallet, {...wallet, title: 'Nubank', name: 'Sabrina', value
 
 const Home = () => {
   const [showGoals, setShowGoals] = useState(false);
-  const [teste, setTeste] = useState(arrayWallet);
+  const [walletList, setWalletList] = useState(arrayWallet);
   const [goalsList, setGoal] = useState(arrayGols);
+  const [walletValue, setWalletValue] = useState(0);
 
-
+  useEffect(() =>{
+    const newWalletValue = arrayWallet.reduce((acumulator, item) =>{
+      const { value } = item;
+      return acumulator + value;
+    }, 0)
+    setWalletValue(newWalletValue);
+    console.log(walletValue);
+  })
   return (
-    <WalletProvider value={{arrayWallet: teste, setTeste, goalsList, setGoal}}>
+    <WalletProvider value={{arrayWallet: walletList, setTeste: setWalletList, goalsList, setGoal}}>
       <Container>
         {showGoals && <ModalGoals setShowGoals={setShowGoals} setArrayGols={setGoal} oldValue={goalsList}></ModalGoals>}
-        <TotalValue></TotalValue>
+        <TotalValue totalValueExpanse={walletValue}></TotalValue>
         <Wrapper>
           <WalletList></WalletList>
           <GoalsList setShowGoals={setShowGoals}></GoalsList>
