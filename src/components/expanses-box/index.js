@@ -2,10 +2,10 @@ import React from 'react'
 import { Container, DateText } from './style'
 import Expanse from '../expanse'
 
-const ExpansesBox = ({expansesInformation}) =>{
+const ExpansesBox = ({expansesInformation, date}) =>{
   return(
     <Container>
-      <DateText>09/10</DateText>
+      <DateText>{date}</DateText>
       {expansesInformation.map((expanse, index) => <Expanse expanse={expanse} key={`key-expanse-${index}`}></Expanse>)}
     </Container>
   )

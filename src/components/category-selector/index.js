@@ -8,6 +8,7 @@ const categoryItem = {
   subCategory: ['Nome',"Chácara", "Praia"]
 };
 
+
 const categorys = [
   categoryItem,
   { ...categoryItem, subCategory: ["Praia"] },
@@ -59,3 +60,5 @@ const CategorySelector = props => {
 };
 
 export default CategorySelector;
+
+

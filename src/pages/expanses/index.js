@@ -7,7 +7,18 @@ import ExpansesContext from "../../components/context-expanses";
 const Expanses = () => {
   const {expansesInformation, setExpansesInformation} = useContext(ExpansesContext);
   const [totalValueExpanse, setTotalValueExpanse] = useState(0);
+  const [arrayDates, setArrayDates] = useState([]);
 
+
+  useEffect(() =>{
+    const newDate = expansesInformation.map(({dateExpanse}) =>{
+      return dateExpanse;
+    })
+    setArrayDates(newDate.sort());
+  }, [])
+  
+  console.log(arrayDates);
+  
   useEffect(() =>{
     const newValue = expansesInformation.reduce((acumulator, item) =>{
       const { value } = item;
@@ -15,13 +26,13 @@ const Expanses = () => {
       return acumulator + valueReplaced;
     }, 0)
     setTotalValueExpanse(newValue.toFixed(2));
-  }, [expansesInformation])
+  }, [expansesInformation]);
 
   return (
       <Container>
         <TotalValue totalValueExpanse={totalValueExpanse}/>
         <ContainerExpanses>
-          <ExpansesBox expansesInformation={expansesInformation}></ExpansesBox>
+          {arrayDates.map((date, index) => <ExpansesBox key={`key-expanseBox-${index}`} expansesInformation={expansesInformation} date={date}></ExpansesBox>)}
         </ContainerExpanses>
       </Container>
   );
