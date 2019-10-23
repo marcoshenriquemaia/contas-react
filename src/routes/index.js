@@ -7,12 +7,26 @@ import Expanses from "../pages/expanses";
 import {ExpansesProvider} from "../components/context-expanses";
 
 const Routes = () => {
+  const wallet = {
+    _Id: '1',
+    title: "Itau",
+    name: "Marcos",
+    value: 1050.25,
+    icon: "wallet",
+    color: "red"
+  };
+
   const [expansesInformation, setExpansesInformation] = useState([]);
+  const [arrayWallet, setArrayWallet] = useState([
+    wallet,
+    { ...wallet, title: "Nubank", name: "Sabrina", value: 2000, color: "blue",_Id: '2' },
+    { ...wallet, title: "Santander", color: "purple", _Id: '3' }
+  ]);
 
   return (
     <BrowserRouter>
       <Switch>
-        <ExpansesProvider value={{setExpansesInformation, expansesInformation}}>
+        <ExpansesProvider value={{setExpansesInformation, expansesInformation, arrayWallet, setArrayWallet}}>
           <Route exact path="/" component={Home} />
           <Route path="/dialer" component={DialerBigger} />
           <Route path="/expanses" component={Expanses} />

@@ -27,6 +27,7 @@ const ModalExpanse = ({headerType, setHeaderType, dialerValue}) => {
   const [obs, setObs] = useState('');
 
   const {setExpansesInformation, expansesInformation} = useContext(ExpansesContext);
+  const { arrayWallet, setArrayWallet } = useContext(ExpansesContext)
 
   const handleOnChangeDate = ({target: {value}}) =>{
     setDateExpanse(value)
@@ -65,7 +66,7 @@ const ModalExpanse = ({headerType, setHeaderType, dialerValue}) => {
           <Currency>R$</Currency>
           <Value>{dialerValue}</Value>
         </ValueField>
-        <CategorySelector type='wallet' setWalletSelected={setWalletSelected}></CategorySelector>
+        <CategorySelector type='wallet' setWalletSelected={setWalletSelected} arrayWallet={arrayWallet} setArrayWallet={setArrayWallet}></CategorySelector>
         <CategorySelector type='category' setCategorySelected={setCategorySelected}></CategorySelector>
         <WrapperWallet>
           <TitleWallet>Data</TitleWallet>
