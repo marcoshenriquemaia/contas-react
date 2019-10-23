@@ -36,14 +36,15 @@ const Home = () => {
 
   const arrayWallet = [
     wallet,
-    { ...wallet, title: "Nubank", name: "Sabrina", value: 2000, color: "blue",_Id: '2' },
-    { ...wallet, title: "Santander", color: "purple", _Id: '3' }
+    { ...wallet, title: "Nubank", name: "Sabrina", value: 2000, color: "purple",_Id: '2' },
+    { ...wallet, title: "Santander", color: "blue", _Id: '3' }
   ];
 
   const [showGoals, setShowGoals] = useState(false);
   const [walletList, setWalletList] = useState(arrayWallet);
   const [goalsList, setGoal] = useState(arrayGols);
   const [walletValue, setWalletValue] = useState(0);
+  const [goalsCategorys, setGaolsCategorys] = useState([{title: 'Eletrodomestico', name: 'Video-game', icon: 'games'} ])
 
   useEffect(() => {
     const newWalletValue = arrayWallet.reduce((acumulator, item) => {
@@ -67,6 +68,8 @@ const Home = () => {
             setShowGoals={setShowGoals}
             setArrayGols={setGoal}
             oldValue={goalsList}
+            goalsCategorys={goalsCategorys}
+            type='goal'
           ></ModalGoals>
         )}
         <TotalValue totalValueExpanse={walletValue}></TotalValue>

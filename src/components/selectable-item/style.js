@@ -26,6 +26,7 @@ export const WrapperText = styled.div`
 
 export const Title = styled.h1`
   font-weight: 700;
+  margin-bottom: 5px;
   color: #707070;
 `;
 export const SubTitle = styled.h2`

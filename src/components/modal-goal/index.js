@@ -4,7 +4,7 @@ import CategorySelector from '../category-selector'
 import Dialer from '../dialer'
 import { Button } from "../goals-list/style";
 
-const ModalGoal = ({setShowGoals, setArrayGols, oldValue}) =>{
+const ModalGoal = ({setShowGoals, setArrayGols, oldValue, goalsCategorys, type}) =>{
   const [dialerValue, setDialerValue] = useState('');
   const [nameGoal, setNameGoal] = useState('');
   const [dateValue, setDateValue] = useState('');
@@ -42,7 +42,7 @@ const ModalGoal = ({setShowGoals, setArrayGols, oldValue}) =>{
   return(
     <Container onClick={() => setShowGoals(false)}>
       <BoxModal onClick={e => {e.stopPropagation()}}>
-        <CategorySelector setCategory={setCategory} setSubCategory={setSubCategory}/>
+        <CategorySelector setCategory={setCategory} setSubCategory={setSubCategory} goalsCategorys={goalsCategorys} type={type}/>
         <NameField placeholder='Nome da Meta' onChange={handleOnChangeNameField} />
         <FinishGoalWrapper>
           <TitleFinishGoal>Final da meta</TitleFinishGoal>

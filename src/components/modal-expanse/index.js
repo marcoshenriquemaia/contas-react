@@ -42,13 +42,13 @@ const ModalExpanse = ({headerType, setHeaderType, dialerValue}) => {
     setExpansesInformation([...expansesInformation, {
       value: dialerValue,
       wallet: {
-        category: walletSelected.category,
-        subCategory: walletSelected.subCategory,
+        category: walletSelected.title,
+        subCategory: walletSelected.name,
         icon: walletSelected.icon,
       },
       category: {
-        category: categorySelected.category,
-        subCategory: categorySelected.subCategory,
+        category: categorySelected.title,
+        subCategory: categorySelected.name,
         icon: categorySelected.icon,
       },
       dateExpanse,
