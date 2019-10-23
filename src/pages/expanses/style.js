@@ -9,6 +9,7 @@ export const Container = styled.div`
 export const ContainerExpanses = styled.div`
   width: 100%;
   height: 78%;
+  max-height: 78%;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -11,13 +11,11 @@ const Expanses = () => {
 
 
   useEffect(() =>{
-    const newDate = expansesInformation.map(({dateExpanse}) =>{
-      return dateExpanse;
-    })
-    setArrayDates(newDate.sort());
+    const newDate = expansesInformation.map(({dateExpanse}) =>{return dateExpanse});
+    const filteredArrayDate = newDate.filter((date, index) => {return newDate.indexOf(date) === index});
+    setArrayDates(filteredArrayDate.sort());
   }, [])
   
-  console.log(arrayDates);
   
   useEffect(() =>{
     const newValue = expansesInformation.reduce((acumulator, item) =>{
@@ -32,7 +30,8 @@ const Expanses = () => {
       <Container>
         <TotalValue totalValueExpanse={totalValueExpanse}/>
         <ContainerExpanses>
-          {arrayDates.map((date, index) => <ExpansesBox key={`key-expanseBox-${index}`} expansesInformation={expansesInformation} date={date}></ExpansesBox>)}
+          {arrayDates.map((date, index) =>
+            <ExpansesBox key={`key-expanseBox-${index}`} expansesInformation={expansesInformation} date={date}></ExpansesBox>)}
         </ContainerExpanses>
       </Container>
   );

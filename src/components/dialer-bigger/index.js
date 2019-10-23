@@ -17,6 +17,11 @@ const DialerBigger = () =>{
     setDialerValue(numberArray.join(''))
   }
 
+  const handleClickButton = e =>{
+    if (!dialerValue) return;
+    setShowExpanseModal(true)
+  }
+
   return(
     <Container>
        {showExpanseModal && <ModalExpanse headerType={headerType} setHeaderType={setHeaderType} dialerValue={formatReal(dialerValue)}/>}
@@ -35,7 +40,7 @@ const DialerBigger = () =>{
         <Key onClick={() => setDialerValue(`${dialerValue}0`)}>0</Key>
         <IconType icon='backspace' onClick={() => backspaceNumber()}></IconType>
       </Dialer>
-      <Button onClick={() => {setShowExpanseModal(true)}}>Continuar</Button>
+      <Button onClick={handleClickButton}>Continuar</Button>
     </Container>
   )
 

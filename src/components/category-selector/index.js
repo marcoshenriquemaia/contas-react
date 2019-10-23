@@ -13,6 +13,12 @@ const categorys = [
   categoryItem,
   { ...categoryItem, subCategory: ["Praia"] },
   { ...categoryItem, subCategory: ["Clube"] },
+  categoryItem,
+  categoryItem,
+  categoryItem,
+  categoryItem,
+  categoryItem,
+  categoryItem,
 ];
 
 const CategorySelector = props => {

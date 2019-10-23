@@ -36,7 +36,8 @@ const ModalExpanse = ({headerType, setHeaderType, dialerValue}) => {
     setObs(value);
   }
 
-  const handleClickButton = () =>{
+  const handleClickButton = e =>{
+    if (!dateExpanse) {e.preventDefault(); return};
     setExpansesInformation([...expansesInformation, {
       value: dialerValue,
       wallet: {

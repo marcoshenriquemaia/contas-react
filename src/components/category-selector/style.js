@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 4em;
+  max-height: 70.6vh;
   z-index: 15;
   background-color: #fff;
   position: absolute;
@@ -26,7 +27,7 @@ export const Container = styled.div`
           height: 4em;
         }
         to {
-          height: calc(70.6vh);
+          height: fit-content;
         }
       }
       & > :first-child {
