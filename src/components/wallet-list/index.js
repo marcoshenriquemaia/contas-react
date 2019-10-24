@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
 import Wallet from "./wallet";
 import { Container } from "./style";
-import WalletContext from "../context-wallet";
+import ExpansesContext from "../context-wallet";
 
 const WalletList = () => {
-  const walletState = useContext(WalletContext);
+  const { arrayWallet } = useContext(ExpansesContext);
+  console.log(arrayWallet[0]);
+  const teste = [{color: 'red', title: 'teste', name: 'teste', value: 200, icon: 'wallet'}];
   return (
     <Container>
-      {walletState.arrayWallet.map(
+      {arrayWallet.map(
         ({ color, title, name, value, icon }, index) => (
           <Wallet
             key={`key-wallet-${index}`}

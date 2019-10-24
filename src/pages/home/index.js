@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import TotalValue from "../../components/total-value";
 import WalletList from "../../components/wallet-list";
 import GoalsList from "../../components/goals-list";
 import { Container, Wrapper } from "./style.js";
 import ModalGoals from "../../components/modal-goal";
 import { WalletProvider } from "../../components/context-wallet";
+import ExpansesContext from "../../components/context-expanses";
 
 const goalInformation = {
   title: "Viagem",
@@ -24,22 +25,7 @@ const goalInformation = {
 const arrayGols = [];
 
 const Home = () => {
-   
-  const wallet = {
-    _Id: '1',
-    title: "Itau",
-    name: "Marcos",
-    value: 1050.25,
-    icon: "wallet",
-    color: "red"
-  };
-
-  const arrayWallet = [
-    wallet,
-    { ...wallet, title: "Nubank", name: "Sabrina", value: 2000, color: "purple",_Id: '2' },
-    { ...wallet, title: "Santander", color: "blue", _Id: '3' }
-  ];
-
+  const {arrayWallet, setArrayWallet} = useContext(ExpansesContext);
   const [showGoals, setShowGoals] = useState(false);
   const [walletList, setWalletList] = useState(arrayWallet);
   const [goalsList, setGoal] = useState(arrayGols);
@@ -53,6 +39,7 @@ const Home = () => {
     }, 0);
     setWalletValue(newWalletValue);
   },0);
+
   return (
     <WalletProvider
       value={{

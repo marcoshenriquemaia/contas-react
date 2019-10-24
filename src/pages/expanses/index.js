@@ -5,6 +5,7 @@ import ExpansesBox from "../../components/expanses-box";
 import ExpansesContext from "../../components/context-expanses";
 
 const Expanses = () => {
+  const {arrayWallet, setArrayWallet} = useContext(ExpansesContext);
   const {expansesInformation, setExpansesInformation} = useContext(ExpansesContext);
   const [totalValueExpanse, setTotalValueExpanse] = useState(0);
   const [arrayDates, setArrayDates] = useState([]);
@@ -25,6 +26,17 @@ const Expanses = () => {
     }, 0)
     setTotalValueExpanse(newValue.toFixed(2));
   }, [expansesInformation]);
+
+  //fazer uma logica para somar os valores na carteira. 
+
+  useEffect(() =>{
+    expansesInformation.map(expanse =>{
+      arrayWallet.reduce((acumulator, wallet) =>{
+        return wallet.value = acumulator + 100;
+      }, 0)
+      setArrayWallet([...arrayWallet])
+    })
+  }, []);
 
   return (
       <Container>
