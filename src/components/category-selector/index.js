@@ -2,38 +2,39 @@ import React, { useState } from "react";
 import { Container, WapperSelector } from "./style.js";
 import SelectableItem from "../selectable-item/index.js";
 import ButtonSelector from "../shared/button-selector/index.js";
+import { typesSelectableDictionarie } from "../dictionaries/index.js";
 
 const categorys = [
   {
     title: "Supermercado",
     name: "Higiene",
-    icon: 'supermarket'
+    icon: "supermarket"
   },
   {
     title: "Lazer",
     name: "Cinema",
-    icon: 'recreation'
+    icon: "recreation"
   },
   {
     title: "Transporte",
     name: "Uber",
-    icon: 'transport'
+    icon: "transport"
   },
   {
     title: "Educação",
     name: "Material Escola",
-    icon: 'education'
+    icon: "education"
   },
   {
     title: "Jogos",
     name: "x-box",
-    icon: 'games'
+    icon: "games"
   },
   {
     title: "Alimentação",
     name: "Fast-food",
-    icon: 'food'
-  },
+    icon: "food"
+  }
 ];
 
 const CategorySelector = props => {
@@ -52,7 +53,7 @@ const CategorySelector = props => {
 
   const selectables = {
     wallet: arrayWallet,
-    category: categorys, 
+    category: categorys,
     goal: goalsCategorys
   };
 
@@ -69,55 +70,36 @@ const CategorySelector = props => {
         name: item.name,
         icon: item.icon
       });
+    type == "goal" &&
+      setCategory({
+        title: item.title,
+        name: item.name,
+        icon: item.icon
+      });
     setSelecting(false);
     setSelected(item);
   };
 
   const handleOnClick = () => {
     setSelecting(!selecting);
-    !!setCategory && setCategory(selected.category);
-    !!setSubCategory && setSubCategory(selected.subCategory[0]);
+    !!selected && setCategory(selected.title);
+    !!selected && setSubCategory(selected.name);
   };
 
   return (
     <WapperSelector>
       <Container selecting={selecting}>
         <SelectableItem
-          icon={
-            selected
-              ? selected.icon
-              : type === "wallet"
-              ? "wallet"
-              : "category"
-          }
-          title={
-            selected
-              ? selected.title
-              : type === "wallet"
-              ? "Carteira"
-              : "Categoria"
-          }
-          subTitle={
-            selected
-              ? selected.name
-              : type === "wallet"
-              ? "Nome"
-              : "SubCategoria"
-          }
-
-          color={
-            selected
-              ? selected.color
-              : type === "wallet"
-              ? "blue"
-              : "purple"
-          }
+          icon={!selected ? typesSelectableDictionarie[type].icon : selected.icon}
+          title={!selected ? typesSelectableDictionarie[type].title : selected.title}
+          subTitle={!selected ? typesSelectableDictionarie[type].name : selected.name}
+          color={!selected ? typesSelectableDictionarie[type].color : selected.color}
           onClick={handleOnClick}
         >
           <ButtonSelector />
         </SelectableItem>
         {selecting &&
-          selectables[type].map((item, index) => (
+          selectables[type].map((item, index) => 
             <SelectableItem
               key={`key-category-${index}`}
               icon={item.icon}
@@ -126,7 +108,7 @@ const CategorySelector = props => {
               color={item.color}
               onClick={() => handleSelect(item)}
             ></SelectableItem>
-          ))}
+        )}
       </Container>
     </WapperSelector>
   );

@@ -17,6 +17,7 @@ import { Button } from "../goals-list/style";
 import { NavLink } from 'react-router-dom'
 import CategorySelector from "../category-selector";
 import ExpansesContext from "../context-expanses";
+import convertInt from '../utils/convert-int'
 
 const ModalExpanse = ({headerType, setHeaderType, dialerValue}) => {
   const [walletSelected, setWalletSelected] = useState({});
@@ -28,6 +29,14 @@ const ModalExpanse = ({headerType, setHeaderType, dialerValue}) => {
 
   const {setExpansesInformation, expansesInformation} = useContext(ExpansesContext);
   const { arrayWallet, setArrayWallet } = useContext(ExpansesContext)
+
+  const subtractWallet = () =>{
+    const dialerValueInt = convertInt(dialerValue);
+    arrayWallet.map(wallet =>{
+      if (wallet.title != walletSelected.title) return;
+     wallet.value = wallet.value - dialerValueInt;
+    })
+  }
 
   const handleOnChangeDate = ({target: {value}}) =>{
     setDateExpanse(value)
@@ -56,7 +65,9 @@ const ModalExpanse = ({headerType, setHeaderType, dialerValue}) => {
       obs,
       tagList,
     }])
+    subtractWallet();
   }
+
 
   return (
     <Container>

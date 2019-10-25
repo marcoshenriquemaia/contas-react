@@ -21,7 +21,7 @@ const ModalGoal = ({setShowGoals, setArrayGols, oldValue, goalsCategorys, type})
     },
     category: {
       title: category,
-      subTitle: subCategory,
+      name: subCategory,
       icon: 'travel',
     },
   }

@@ -13,14 +13,14 @@ const Routes = () => {
     name: "Marcos",
     value: 1050.25,
     icon: "wallet",
-    color: "red"
+    color: "blue"
   };
 
   const [expansesInformation, setExpansesInformation] = useState([]);
   const [arrayWallet, setArrayWallet] = useState([
     wallet,
-    { ...wallet, title: "Nubank", name: "Sabrina", value: 2000, color: "blue",_Id: '2' },
-    { ...wallet, title: "Santander", color: "purple", _Id: '3' }
+    { ...wallet, title: "Nubank", name: "Sabrina", value: 1050.25, color: "purple",_Id: '2' },
+    { ...wallet, title: "Santander", color: "red", _Id: '3' }
   ]);
 
   return (
