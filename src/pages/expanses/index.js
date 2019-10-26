@@ -5,7 +5,6 @@ import ExpansesBox from "../../components/expanses-box";
 import ExpansesContext from "../../components/context-expanses";
 
 const Expanses = () => {
-  const { arrayWallet, setArrayWallet } = useContext(ExpansesContext);
   const { expansesInformation, setExpansesInformation } = useContext(
     ExpansesContext
   );
@@ -32,9 +31,6 @@ const Expanses = () => {
     }, 0);
     setTotalValueExpanse(newValue.toFixed(2));
   }, [expansesInformation]);
-
-  //fazer uma logica para somar os valores na carteira.
-
 
   return (
     <Container>

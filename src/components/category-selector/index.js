@@ -82,8 +82,8 @@ const CategorySelector = props => {
 
   const handleOnClick = () => {
     setSelecting(!selecting);
-    !!selected && setCategory(selected.title);
-    !!selected && setSubCategory(selected.name);
+    !!selecting && setCategory(selected.title);
+    !!selecting && setSubCategory(selected.name);
   };
 
   return (
@@ -94,7 +94,7 @@ const CategorySelector = props => {
           title={!selected ? typesSelectableDictionarie[type].title : selected.title}
           subTitle={!selected ? typesSelectableDictionarie[type].name : selected.name}
           color={!selected ? typesSelectableDictionarie[type].color : selected.color}
-          onClick={handleOnClick}
+          onClick={() => {handleOnClick()}}
         >
           <ButtonSelector />
         </SelectableItem>

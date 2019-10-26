@@ -7,7 +7,7 @@ const TotalValue = ({totalValueExpanse}) => {
   return (
     <Container>
       <Currency>R$</Currency>
-      <Total>{totalValueExpanse}</Total>
+      <Total>{formatReal(totalValueExpanse)}</Total>
     </Container>
   );
 };
