@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHome, FaWallet, FaTimes, FaPlane, FaPlus, FaBackspace, FaShoppingCart, FaUmbrellaBeach, FaCar, FaGraduationCap, FaGamepad, FaPizzaSlice, FaClone } from "react-icons/fa";
+import { FaHome, FaWallet, FaTimes, FaPlane, FaPlus, FaBackspace, FaShoppingCart, FaUmbrellaBeach, FaCar, FaGraduationCap, FaGamepad, FaPizzaSlice, FaClone, FaFileInvoiceDollar } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 
 
@@ -17,7 +17,8 @@ const DictonaryIcon = {
   education: (rest) => <FaGraduationCap {...rest}/>,
   games: (rest) => <FaGamepad {...rest}/>,
   food: (rest) => <FaPizzaSlice {...rest}/>,
-  category: (rest) => <FaClone {...rest}/>,  
+  category: (rest) => <FaClone {...rest}/>,
+  expanses: (rest) => <FaFileInvoiceDollar {...rest}/>,      
 };
 
 const IconType = ({ icon, ...rest }) =>
