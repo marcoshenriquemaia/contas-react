@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css} from "styled-components";
 
 export const Container = styled.div`
   width: calc(100%);
@@ -13,6 +13,19 @@ export const Container = styled.div`
   margin-bottom: 1em;
   padding: 0 8px;
   box-sizing: border-box;
+  animation-name: entry;
+  animation-duration: 250ms;
+  animation-fill-mode: backwards;
+
+  ${({delay}) => css`animation-delay: ${delay}ms`}
+
+  @keyframes entry {
+    from{
+      transform: translatex(-30%);
+    }to{
+      transform: translatex(0);
+    }
+  }
 `;
 
 export const WrapperText = styled.div`

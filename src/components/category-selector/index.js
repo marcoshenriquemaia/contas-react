@@ -84,7 +84,7 @@ const CategorySelector = props => {
 
   return (
     <WapperSelector>
-      <Container selecting={selecting}>
+      <Container selecting={selecting} type={type}>
         <SelectableItem
           icon={!selected ? typesSelectableDictionarie[type].icon : selected.icon}
           title={!selected ? typesSelectableDictionarie[type].title : selected.title}
@@ -103,6 +103,7 @@ const CategorySelector = props => {
               subTitle={item.name}
               color={item.color}
               onClick={() => handleSelect(item)}
+              delay={index*50}
             ></SelectableItem>
         )}
       </Container>

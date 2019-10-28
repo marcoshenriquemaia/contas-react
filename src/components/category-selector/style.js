@@ -23,14 +23,45 @@ export const Container = styled.div`
       max-height: fit-content;
       z-index: 20;
 
-      @keyframes openCategorySelector {
-        from {
-          height: 4em;
-        }
-        to {
-          height: 70.6vh;
-        }
-      }
+      ${({ type }) =>
+        type === "wallet" &&
+        css`
+          max-height: 70.6vh;
+          @keyframes openCategorySelector {
+            from {
+              height: 4em;
+            }
+            to {
+              height: 70.6vh;
+            }
+          }
+        `}
+        ${({ type }) =>
+        type === "category" &&
+        css`
+          max-height: calc(70.6vh - 5em);
+          @keyframes openCategorySelector {
+            from {
+              height: 4em;
+            }
+            to {
+              height: calc(70.6vh - 5em);
+            }
+          }
+        `}
+        ${({ type }) =>
+        type === "goal" &&
+        css`
+          max-height: 70.6vh;
+          @keyframes openCategorySelector {
+            from {
+              height: 4em;
+            }
+            to {
+              height: 70.6vh;
+            }
+          }
+        `}
       & > :first-child {
         margin-bottom: 1em;
       }
