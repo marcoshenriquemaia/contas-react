@@ -5,7 +5,6 @@ import ExpansesContext from "../context-wallet";
 
 const WalletList = () => {
   const { arrayWallet } = useContext(ExpansesContext);
-  const teste = [{color: 'red', title: 'teste', name: 'teste', value: 200, icon: 'wallet'}];
   return (
     <Container>
       {arrayWallet.map(

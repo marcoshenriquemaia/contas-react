@@ -27,7 +27,6 @@ const arrayGols = [];
 const Home = () => {
   const {arrayWallet, setArrayWallet} = useContext(ExpansesContext);
   const [showGoals, setShowGoals] = useState(false);
-  const [walletList, setWalletList] = useState(arrayWallet);
   const [goalsList, setGoal] = useState(arrayGols);
   const [walletValue, setWalletValue] = useState(0);
   const [goalsCategorys, setGaolsCategorys] = useState([{title: 'Eletrodomestico', name: 'Video-game', icon: 'games'} ])
@@ -37,14 +36,13 @@ const Home = () => {
       const { value } = item;
       return acumulator + value;
     }, 0);
-    setWalletValue(newWalletValue);
+    setWalletValue(newWalletValue.toFixed(2));
   },0);
 
   return (
     <WalletProvider
       value={{
-        arrayWallet: walletList,
-        setTeste: setWalletList,
+        arrayWallet,
         goalsList,
         setGoal
       }}

@@ -1,7 +1,8 @@
 const convertInt = (value) =>{
-  const valueInt = parseFloat(value.replace(',','.'));
-  
-  return valueInt.toFixed(2);
+  const newValue = parseFloat(value.replace('.','').replace(',','.'));
+  const valueInt = newValue.toFixed(2);
+
+  return parseFloat(valueInt);
 }
 
 export default convertInt;

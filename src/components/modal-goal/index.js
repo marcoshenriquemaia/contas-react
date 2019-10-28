@@ -14,7 +14,7 @@ const ModalGoal = ({setShowGoals, setArrayGols, oldValue, goalsCategorys, type})
   const goalInformation = {
     title: nameGoal,
     icon: 'wallet',
-    value: parseInt(dialerValue),
+    value: parseFloat(dialerValue),
     date: {
       create: '10-04-2019',
       end: dateValue,

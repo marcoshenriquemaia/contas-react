@@ -20,6 +20,7 @@ export const Container = styled.div`
       animation-name: openCategorySelector;
       animation-duration: 250ms;
       animation-fill-mode: forwards;
+      max-height: fit-content;
       z-index: 20;
 
       @keyframes openCategorySelector {
@@ -27,7 +28,7 @@ export const Container = styled.div`
           height: 4em;
         }
         to {
-          height: fit-content;
+          height: 70.6vh;
         }
       }
       & > :first-child {

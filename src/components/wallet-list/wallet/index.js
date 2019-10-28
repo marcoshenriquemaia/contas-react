@@ -11,7 +11,7 @@ const Wallet = ({ cor, funcao, title, name, value, icon}) => {
         <Type>{title}</Type>
         <Name>{name}</Name>
       </WrapperType>
-      <Value value={value}></Value>
+      <Value value={value.toFixed(2)}></Value>
     </Container>
   );
 };

@@ -40,11 +40,9 @@ const categorys = [
 const CategorySelector = props => {
   const {
     setCategory,
-    setSubCategory,
     setWalletSelected,
     setCategorySelected,
     type,
-    setArrayWallet,
     arrayWallet,
     goalsCategorys
   } = props;
@@ -82,8 +80,6 @@ const CategorySelector = props => {
 
   const handleOnClick = () => {
     setSelecting(!selecting);
-    !!selecting && setCategory(selected.title);
-    !!selecting && setSubCategory(selected.name);
   };
 
   return (
@@ -94,7 +90,7 @@ const CategorySelector = props => {
           title={!selected ? typesSelectableDictionarie[type].title : selected.title}
           subTitle={!selected ? typesSelectableDictionarie[type].name : selected.name}
           color={!selected ? typesSelectableDictionarie[type].color : selected.color}
-          onClick={() => {handleOnClick()}}
+          onClick={() => handleOnClick()}
         >
           <ButtonSelector />
         </SelectableItem>

@@ -16,7 +16,7 @@ const DialerBigger = () =>{
     numberArray.pop();
     setDialerValue(numberArray.join(''))
   }
-
+  
   const handleClickButton = e =>{
     if (!dialerValue) return;
     setShowExpanseModal(true)
