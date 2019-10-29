@@ -3,9 +3,9 @@ import IconBox from "../../icon-box";
 import Value from "../../value";
 import { Container, WrapperType, Type, Name } from "./style";
 
-const Wallet = ({ cor, funcao, title, name, value, icon}) => {
+const Wallet = ({ cor, title, name, value, icon, setShowWalletModal}) => {
   return (
-    <Container onClick={funcao}>
+    <Container onClick={() => setShowWalletModal(true)}>
       <IconBox cor={cor} icon={icon}></IconBox>
       <WrapperType>
         <Type>{title}</Type>

@@ -6,6 +6,7 @@ import { Container, Wrapper } from "./style.js";
 import ModalGoals from "../../components/modal-goal";
 import { WalletProvider } from "../../components/context-wallet";
 import ExpansesContext from "../../components/context-expanses";
+import ModalWallet from "../../components/modal-wallet";
 
 const goalInformation = {
   title: "Viagem",
@@ -29,7 +30,8 @@ const Home = () => {
   const [showGoals, setShowGoals] = useState(false);
   const [goalsList, setGoal] = useState(arrayGols);
   const [walletValue, setWalletValue] = useState(0);
-  const [goalsCategorys, setGaolsCategorys] = useState([{title: 'Eletrodomestico', name: 'Video-game', icon: 'games'} ])
+  const [goalsCategorys, setGaolsCategorys] = useState([{title: 'Eletrodomestico', name: 'Video-game', icon: 'games'} ]);
+  const [showWalletModal, setShowWalletModal] = useState(false);
 
   useEffect(() => {
     const newWalletValue = arrayWallet.reduce((acumulator, item) => {
@@ -37,8 +39,14 @@ const Home = () => {
       return acumulator + value;
     }, 0);
     setWalletValue(newWalletValue.toFixed(2));
-  },0);
+  },[]);
 
+  const booksTeste = async () =>{
+    const book = await fetch('https://www.googleapis.com/books/v1/volumes?q=harry+potter&callback=handleResponse');
+    console.log(book);
+  }
+
+  booksTeste();
   return (
     <WalletProvider
       value={{
@@ -48,7 +56,7 @@ const Home = () => {
       }}
     >
       <Container>
-        {showGoals && (
+        {showGoals && 
           <ModalGoals
             setShowGoals={setShowGoals}
             setArrayGols={setGoal}
@@ -56,10 +64,11 @@ const Home = () => {
             goalsCategorys={goalsCategorys}
             type='goal'
           ></ModalGoals>
-        )}
+        }
+        {showWalletModal && <ModalWallet></ModalWallet>}
         <TotalValue totalValueExpanse={walletValue}></TotalValue>
         <Wrapper>
-          <WalletList></WalletList>
+          <WalletList setShowWalletModal={setShowWalletModal}></WalletList>
           <GoalsList setShowGoals={setShowGoals}></GoalsList>
         </Wrapper>
       </Container>

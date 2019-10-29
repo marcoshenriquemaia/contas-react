@@ -3,7 +3,7 @@ import Wallet from "./wallet";
 import { Container } from "./style";
 import ExpansesContext from "../context-wallet";
 
-const WalletList = () => {
+const WalletList = ({setShowWalletModal}) => {
   const { arrayWallet } = useContext(ExpansesContext);
   return (
     <Container>
@@ -16,6 +16,7 @@ const WalletList = () => {
             name={name}
             value={value}
             icon={icon}
+            setShowWalletModal={setShowWalletModal}
           />
         )
       )}
