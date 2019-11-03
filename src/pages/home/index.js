@@ -7,6 +7,7 @@ import ModalGoals from "../../components/modal-goal";
 import { WalletProvider } from "../../components/context-wallet";
 import ExpansesContext from "../../components/context-expanses";
 import ModalWallet from "../../components/modal-wallet";
+import api from '../../services/api';
 
 const goalInformation = {
   title: "Viagem",
@@ -22,6 +23,7 @@ const goalInformation = {
     icon: "travel"
   }
 };
+
 
 const arrayGols = [];
 
@@ -42,9 +44,10 @@ const Home = () => {
   },[]);
 
   const booksTeste = async () =>{
-    const book = await fetch('https://www.googleapis.com/books/v1/volumes?q=harry+potter&callback=handleResponse');
-    console.log(book);
+    const book = await api.get('/users');
+    console.log(book.data);
   }
+
 
   booksTeste();
   return (
