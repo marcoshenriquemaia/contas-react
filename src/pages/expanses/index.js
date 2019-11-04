@@ -32,6 +32,7 @@ const Expanses = () => {
     setTotalValueExpanse(newValue.toFixed(2));
   }, [expansesInformation]);
 
+  console.log(expansesInformation);
   return (
     <Container>
       <TotalValue totalValueExpanse={totalValueExpanse} />

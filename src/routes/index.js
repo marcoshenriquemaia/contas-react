@@ -5,23 +5,17 @@ import TabBottomNavigation from "../components/tab-bottom-navigation";
 import DialerBigger from "../components/dialer-bigger";
 import Expanses from "../pages/expanses";
 import {ExpansesProvider} from "../components/context-expanses";
+import api from '../services/api';
+
 
 const Routes = () => {
-  const wallet = {
-    _Id: '1',
-    title: "Itau",
-    name: "Marcos",
-    value: 1050.25,
-    icon: "wallet",
-    color: "blue"
-  };
-
   const [expansesInformation, setExpansesInformation] = useState([]);
-  const [arrayWallet, setArrayWallet] = useState([
-    wallet,
-    { ...wallet, title: "Nubank", name: "Sabrina", value: 1050.25, color: "purple",_Id: '2' },
-    { ...wallet, title: "Santander", color: "red", _Id: '3' }
-  ]);
+  const [arrayWallet, setArrayWallet] = useState([]);
+
+  useEffect(async function(){
+    const walletList = await api.get('/users');
+    setArrayWallet(walletList.data[0].wallet);
+  },[])
 
   return (
     <BrowserRouter>

@@ -110,7 +110,7 @@ const ModalExpanse = ({ headerType, setHeaderType, dialerValue }) => {
         <TagBox setTagList={setTagList} tagList={tagList}></TagBox>
         <Obs placeholder="Obs..." onChange={handleOnChangeObs}></Obs>
         <NavLink to="/expanses">
-          <Button onClick={handleClickButton}>Concluir</Button>{" "}
+          <Button onClick={handleClickButton}>Concluir</Button>
         </NavLink>
       </ContainerWallet>
     </Container>

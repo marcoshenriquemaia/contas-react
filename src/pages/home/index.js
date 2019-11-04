@@ -7,7 +7,6 @@ import ModalGoals from "../../components/modal-goal";
 import { WalletProvider } from "../../components/context-wallet";
 import ExpansesContext from "../../components/context-expanses";
 import ModalWallet from "../../components/modal-wallet";
-import api from '../../services/api';
 
 const goalInformation = {
   title: "Viagem",
@@ -43,13 +42,7 @@ const Home = () => {
     setWalletValue(newWalletValue.toFixed(2));
   },[]);
 
-  const booksTeste = async () =>{
-    const book = await api.get('/users');
-    console.log(book.data);
-  }
 
-
-  booksTeste();
   return (
     <WalletProvider
       value={{
