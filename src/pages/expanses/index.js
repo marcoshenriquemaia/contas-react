@@ -3,6 +3,8 @@ import { Container, ContainerExpanses } from "./style";
 import TotalValue from "../../components/total-value";
 import ExpansesBox from "../../components/expanses-box";
 import ExpansesContext from "../../components/context-expanses";
+import api from '../../services/api';
+import Store from "../../store";
 
 const Expanses = () => {
   const { expansesInformation, setExpansesInformation } = useContext(
@@ -10,6 +12,18 @@ const Expanses = () => {
   );
   const [totalValueExpanse, setTotalValueExpanse] = useState(0);
   const [arrayDates, setArrayDates] = useState([]);
+  const [expansesList, setExpansesList] = useState([]);
+
+  const getExpansesApi = async () =>{
+    const userInformation = await api.get('/users');
+    const expanses = userInformation.data[0].wallet.map(wallet => wallet.expanses.map(expanse => expanse));
+    console.log(expanses);
+  }
+  Store.getWallets({id: 1});
+
+  useEffect(() =>{
+    getExpansesApi();
+  }, []);
 
   useEffect(() => {
     const newDate = expansesInformation.map(({ dateExpanse }) => {

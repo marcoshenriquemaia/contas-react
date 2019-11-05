@@ -11,7 +11,8 @@
           "name": "Marcos",
           "value": 1050.25,
           "icon": "wallet",
-          "color": "blue"
+          "color": "blue",
+          "expanses": []
         },
         {
           "_Id": 2,
@@ -19,7 +20,8 @@
           "name": "Marcos",
           "value": 5350.66,
           "icon": "wallet",
-          "color": "red"
+          "color": "red",
+          "expanses": []
         },
         {
           "_Id": 3,
@@ -27,7 +29,8 @@
           "name": "Marcos",
           "value": 2536.67,
           "icon": "wallet",
-          "color": "purple"
+          "color": "purple",
+          "expanses": []
         }
       ],
      "expansesCategorys": [

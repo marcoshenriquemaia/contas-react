@@ -4,23 +4,33 @@ import Home from "../pages/home";
 import TabBottomNavigation from "../components/tab-bottom-navigation";
 import DialerBigger from "../components/dialer-bigger";
 import Expanses from "../pages/expanses";
-import {ExpansesProvider} from "../components/context-expanses";
-import api from '../services/api';
-
+import { ExpansesProvider } from "../components/context-expanses";
+import api from "../services/api";
 
 const Routes = () => {
   const [expansesInformation, setExpansesInformation] = useState([]);
   const [arrayWallet, setArrayWallet] = useState([]);
 
-  useEffect(async function(){
-    const walletList = await api.get('/users');
+  const getApiWallet = async () => {
+    const walletList = await api.get("/users");
     setArrayWallet(walletList.data[0].wallet);
-  },[])
+  };
+
+  useEffect(() => {
+    getApiWallet();
+  }, []);
 
   return (
     <BrowserRouter>
       <Switch>
-        <ExpansesProvider value={{setExpansesInformation, expansesInformation, arrayWallet, setArrayWallet}}>
+        <ExpansesProvider
+          value={{
+            setExpansesInformation,
+            expansesInformation,
+            arrayWallet,
+            setArrayWallet
+          }}
+        >
           <Route exact path="/" component={Home} />
           <Route path="/dialer" component={DialerBigger} />
           <Route path="/expanses" component={Expanses} />

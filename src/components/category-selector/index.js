@@ -24,11 +24,14 @@ const CategorySelector = props => {
     goal: goalsCategorys
   };
 
-
-  useEffect(() => (async function(){
+  const getExapanses = async () =>{
     const categorys = await api.get("/users");
     setCategorys(categorys.data[0].expansesCategorys);
-  })(), []);
+  }
+
+  useEffect(() => {
+    getExapanses();
+  }, []);
 
   const handleSelect = item => {
     type == "wallet" &&
