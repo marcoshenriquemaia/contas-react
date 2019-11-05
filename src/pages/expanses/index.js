@@ -14,16 +14,7 @@ const Expanses = () => {
   const [arrayDates, setArrayDates] = useState([]);
   const [expansesList, setExpansesList] = useState([]);
 
-  const getExpansesApi = async () =>{
-    const userInformation = await api.get('/users');
-    const expanses = userInformation.data[0].wallet.map(wallet => wallet.expanses.map(expanse => expanse));
-    console.log(expanses);
-  }
-  Store.getWallets({id: 1});
-
-  useEffect(() =>{
-    getExpansesApi();
-  }, []);
+  console.log(Store.getWallets({id: 1}));
 
   useEffect(() => {
     const newDate = expansesInformation.map(({ dateExpanse }) => {
