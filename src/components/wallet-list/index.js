@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import Wallet from "./wallet";
 import { Container } from "./style";
-import ExpansesContext from "../context-wallet";
+import Store from '../../store'
 
 const WalletList = ({setShowWalletModal}) => {
-  const { arrayWallet } = useContext(ExpansesContext);
+  Store.update({id: 1});
   return (
     <Container>
-      {arrayWallet.map(
+      {Store.wallets.map(
         ({ color, title, name, value, icon }, index) => (
           <Wallet
             key={`key-wallet-${index}`}

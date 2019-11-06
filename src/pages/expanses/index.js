@@ -3,7 +3,6 @@ import { Container, ContainerExpanses } from "./style";
 import TotalValue from "../../components/total-value";
 import ExpansesBox from "../../components/expanses-box";
 import ExpansesContext from "../../components/context-expanses";
-import api from '../../services/api';
 import Store from "../../store";
 
 const Expanses = () => {
@@ -14,7 +13,9 @@ const Expanses = () => {
   const [arrayDates, setArrayDates] = useState([]);
   const [expansesList, setExpansesList] = useState([]);
 
-  console.log(Store.getWallets({id: 1}));
+  useEffect(() => {
+    Store.setWallet({ walletId: 1, userId: 1, color: 'red' });
+  }, []);
 
   useEffect(() => {
     const newDate = expansesInformation.map(({ dateExpanse }) => {
@@ -37,7 +38,6 @@ const Expanses = () => {
     setTotalValueExpanse(newValue.toFixed(2));
   }, [expansesInformation]);
 
-  console.log(expansesInformation);
   return (
     <Container>
       <TotalValue totalValueExpanse={totalValueExpanse} />

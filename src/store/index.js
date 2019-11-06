@@ -6,15 +6,33 @@ const getUsersInformation = async () => {
 };
 
 const Store = {
-  getWallets: async ({ id }) => {
-    const usersInformations = await getUsersInformation();
-    const wallets = usersInformations.map(user => {if (user.id === id) return user.wallet})
-
-    return wallets;
+  wallets: [],
+  categorys: [],
+  expanses: [],
+  update: ({ id }) => {
+    const usersInformations = getUsersInformation();
+    usersInformations.then(data => {
+      data.map(user =>{
+        if (id !== user.id) return
+          Store.wallets = user.wallet;
+          Store.categorys = user.expansesCategorys;
+          Store.wallets.map(w => Store.expanses.push(w.expanses));
+      } )
+    });
   },
-  getCategorys: async ({id}) =>{
-    const usersInformations = await getUsersInformation();
-    usersInformations.map(user => user.id === id);
+  setWallet: ({walletId, userId, title, name, value, icon, color }) =>{
+    const usersInformations = getUsersInformation();
+    usersInformations.then(data =>{
+      data.map(user =>{
+        if (user.id !== userId) return;
+        title && (user.wallet[walletId].title = title);
+        name && (user.wallet[walletId].name = name);
+        value && (user.wallet[walletId].value = value);
+        icon && (user.wallet[walletId].icon = icon);
+        color && (user.wallet[walletId].color = color);
+      })
+    })    
+    Store.update({id: userId});
   }
 };
 
