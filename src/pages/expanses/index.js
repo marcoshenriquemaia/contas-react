@@ -11,11 +11,6 @@ const Expanses = () => {
   );
   const [totalValueExpanse, setTotalValueExpanse] = useState(0);
   const [arrayDates, setArrayDates] = useState([]);
-  const [expansesList, setExpansesList] = useState([]);
-
-  useEffect(() => {
-    Store.setWallet({ walletId: 1, userId: 1, color: 'red' });
-  }, []);
 
   useEffect(() => {
     const newDate = expansesInformation.map(({ dateExpanse }) => {

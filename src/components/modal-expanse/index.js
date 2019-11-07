@@ -18,6 +18,7 @@ import { NavLink } from "react-router-dom";
 import CategorySelector from "../category-selector";
 import ExpansesContext from "../context-expanses";
 import convertInt from "../utils/convert-int";
+import Store from "../../store";
 
 const ModalExpanse = ({ headerType, setHeaderType, dialerValue }) => {
   const [walletSelected, setWalletSelected] = useState({});
@@ -76,6 +77,26 @@ const ModalExpanse = ({ headerType, setHeaderType, dialerValue }) => {
       }
     ]);
     subtractWallet();
+    Store.setExpanses({
+      walletId: 1,
+      userId: 1,
+      value: dialerValue,
+      wallet: {
+        walletTitle: walletSelected.title,
+        walletName: walletSelected.name,
+        walletIcon: walletSelected.icon
+      },
+      category: {
+        titleCategory: categorySelected.title,
+        subCategory: categorySelected.name,
+        categoryIcon: categorySelected.icon
+      },
+      dateExpanse,
+      portionsValue,
+      obs,
+      tagList
+    });
+    console.log(Store.expanses);
   };
 
   return (
