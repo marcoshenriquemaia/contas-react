@@ -10,12 +10,12 @@ const ModalGoal = () =>{
     <Container >
       <BoxModal >
         <CategorySelector type='expansesCategorys'/>
-        <NameField />
+        <NameField placeholder='Nome da Meta'/>
         <FinishGoalWrapper>
           <TitleFinishGoal>Final da meta</TitleFinishGoal>
-          <DateField />
+          <DateField type='date'/>
         </FinishGoalWrapper>
-        <Dialer ></Dialer>
+        <Dialer type='small'></Dialer>
       <Button > Criar Meta</Button>
       </BoxModal>
     </Container>

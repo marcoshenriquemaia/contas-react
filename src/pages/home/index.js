@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <Container>
-      { showGoals && <ModalGoals></ModalGoals>}
+      {showGoals && <ModalGoals></ModalGoals>}
       <TotalValue></TotalValue>
       <Wrapper>
         <WalletList></WalletList>

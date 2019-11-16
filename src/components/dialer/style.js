@@ -1,23 +1,42 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  width: 95%;
-  height: fit-content;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
-  margin-top: 1em;
 `;
 export const KeyBox = styled.div`
-  width: calc(8.71vh * 3);
-  height: calc(8.71vh * 4);
+  ${({ type }) =>
+    type === "bigger" &&
+    css`
+      width: calc(10.71vh * 3);
+      height: calc(10.71vh * 4);
+    `}
+  ${({ type }) =>
+    type === "small" &&
+    css`
+      width: calc(8.71vh * 3);
+      height: calc(8.71vh * 4);
+    `}
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
   & > svg {
-    width: 5.91vh;
-    height: 5.91vh;
+    ${({ type }) =>
+      type === "bigger" &&
+      css`
+        width: 7.91vh;
+        height: 7.91vh;
+      `}
+    ${({ type }) =>
+      type === "small" &&
+      css`
+        width: 5.91vh;
+        height: 5.91vh;
+      `}
+
     margin: 1.4vh;
     transform: scale(0.6);
     color: #53a9ff;
@@ -25,20 +44,39 @@ export const KeyBox = styled.div`
 `;
 
 export const ValueField = styled.span`
+  ${({ type }) =>
+    type === "bigger" &&
+    css`
+      height: 25vh;
+    `}
+  ${({ type }) =>
+    type === "small" &&
+    css`
+      height: 36px;
+      border-radius: 9px;
+    `}
   width: 100%;
-  height: 36px;
   background-color: #eeeeee;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 9px;
   color: #53a9ff;
 `;
 export const Key = styled.button`
   border: 3px solid #53a9ff;
   background-color: #fff;
-  width: 5.91vh;
-  height: 5.91vh;
+  ${({ type }) =>
+    type === "bigger" &&
+    css`
+      height: 7.91vh;
+      width: 7.91vh;
+    `}
+  ${({ type }) =>
+    type === "small" &&
+    css`
+      width: 5.91vh;
+      height: 5.91vh;
+    `}
   margin: 1.4vh;
   border-radius: 5.91vh;
   text-align: center;
@@ -52,4 +90,3 @@ export const Key = styled.button`
     background-color: #53a9ff;
   }
 `;
-

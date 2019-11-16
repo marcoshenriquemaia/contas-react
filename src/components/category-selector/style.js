@@ -17,52 +17,9 @@ export const Container = styled.div`
       flex-direction: column;
       justify-content: flex-start;
       overflow-y: scroll;
-      height: fit-content;
-      animation-name: openCategorySelector;
-      animation-duration: 250ms;
-      animation-fill-mode: forwards;
-      max-height: fit-content;
+      ${({itemAmount}) => css` height: ${itemAmount * 5}em;`}
+      max-height: 70.6vh;
       z-index: 20;
-
-      ${({ type }) =>
-        type === "wallet" &&
-        css`
-          max-height: 70.6vh;
-          @keyframes openCategorySelector {
-            from {
-              height: 4em;
-            }
-            to {
-              height: 70.6vh;
-            }
-          }
-        `}
-        ${({ type }) =>
-        type === "category" &&
-        css`
-          max-height: calc(70.6vh - 5em);
-          @keyframes openCategorySelector {
-            from {
-              height: 4em;
-            }
-            to {
-              height: calc(70.6vh - 5em);
-            }
-          }
-        `}
-        ${({ type }) =>
-        type === "goal" &&
-        css`
-          max-height: 70.6vh;
-          @keyframes openCategorySelector {
-            from {
-              height: 4em;
-            }
-            to {
-              height: 70.6vh;
-            }
-          }
-        `}
       & > :first-child {
         margin-bottom: 1em;
       }

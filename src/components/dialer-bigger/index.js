@@ -1,10 +1,11 @@
 import React, { useState} from 'react'
-import { Container, ValueField, Dialer, Key, Currency } from './style'
+import { Container, ValueField, Key, Currency } from './style'
 import NavHeader from '../NavHeader'
 import IconType from '../shared/icon-type'
 import { Button } from '../goals-list/style'
 import formatReal from '../utils/format-real'
 import ModalExpanse from '../modal-expanse'
+import Dialer from '../dialer'
 
 const DialerBigger = () =>{
   const [dialerValue, setDialerValue] = useState('');
@@ -26,20 +27,7 @@ const DialerBigger = () =>{
     <Container>
        {showExpanseModal && <ModalExpanse headerType={headerType} setHeaderType={setHeaderType} dialerValue={formatReal(dialerValue)}/>}
       <NavHeader headerType={headerType} setHeaderType={setHeaderType}></NavHeader>
-      <ValueField headerType={headerType}><Currency>R$</Currency>{ formatReal(dialerValue) }</ValueField>
-      <Dialer>
-        <Key onClick={() => setDialerValue(`${dialerValue}1`)}>1</Key>
-        <Key onClick={() => setDialerValue(`${dialerValue}2`)}>2</Key>
-        <Key onClick={() => setDialerValue(`${dialerValue}3`)}>3</Key>
-        <Key onClick={() => setDialerValue(`${dialerValue}4`)}>4</Key>
-        <Key onClick={() => setDialerValue(`${dialerValue}5`)}>5</Key>
-        <Key onClick={() => setDialerValue(`${dialerValue}6`)}>6</Key>
-        <Key onClick={() => setDialerValue(`${dialerValue}7`)}>7</Key>
-        <Key onClick={() => setDialerValue(`${dialerValue}8`)}>8</Key>
-        <Key onClick={() => setDialerValue(`${dialerValue}9`)}>9</Key>
-        <Key onClick={() => setDialerValue(`${dialerValue}0`)}>0</Key>
-        <IconType icon='backspace' onClick={() => backspaceNumber()}></IconType>
-      </Dialer>
+      <Dialer setValue={setDialerValue} type='bigger'/>
       <Button onClick={handleClickButton}>Continuar</Button>
     </Container>
   )

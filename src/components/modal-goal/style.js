@@ -28,7 +28,7 @@ export const BoxModal = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   overflow: hidden;
   width: 90.53%;
   height: 70.6%;
@@ -55,7 +55,7 @@ export const NameField = styled.input`
   height: 35px;
   border-radius: 31px;
   border: 1px solid #53a9ff;
-  margin-top: 1.5em;
+  margin-top: .4em;
   outline: none;
   padding-left: 1.5em;
   ::placeholder {
@@ -67,7 +67,7 @@ export const FinishGoalWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 1.5em;
+  margin-top: .4em;
   width: 90%;
   height: 2em;
 `;

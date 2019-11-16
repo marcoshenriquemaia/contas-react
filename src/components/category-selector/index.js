@@ -6,18 +6,26 @@ import defaultCategorys from "./default-categorys";
 const CategorySelector = ({ type }) => {
   const [selecting, setSelecting] = useState(false);
   const [selected, setSelected] = useState({});
-  const handleClickSelect = ({title, subTitle}) => {
-    setSelected({ title, subTitle });
+  const handleClickSelect = ({ title, subTitle, icon }) => {
+    setSelected({ title, subTitle, icon });
     setSelecting(!selecting);
   };
-  const handleClickContainer = (e) =>{
+  const handleClickContainer = e => {
     if (selecting) return;
     setSelecting(!selecting);
-  }
+  };
   return (
     <WapperSelector>
-      <Container selecting={selecting} onClick={handleClickContainer}>
-        <SelectableItem title={selected.title} subTitle={selected.subTitle} />
+      <Container
+        selecting={selecting}
+        onClick={handleClickContainer}
+        itemAmount={defaultCategorys[type].length}
+      >
+        <SelectableItem
+          title={selected.title}
+          subTitle={selected.subTitle}
+          icon={selected.icon}
+        />
         {selecting &&
           defaultCategorys[type].map((item, index) => (
             <SelectableItem
@@ -26,7 +34,13 @@ const CategorySelector = ({ type }) => {
               title={item.title}
               subTitle={item.name}
               index={index}
-              onClick={()=> handleClickSelect({title: item.title, subTitle: item.name})}
+              onClick={() =>
+                handleClickSelect({
+                  title: item.title,
+                  subTitle: item.name,
+                  icon: item.icon
+                })
+              }
             />
           ))}
       </Container>
