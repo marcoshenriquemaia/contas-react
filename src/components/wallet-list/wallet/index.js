@@ -3,15 +3,15 @@ import IconBox from "../../icon-box";
 import Value from "../../value";
 import { Container, WrapperType, Type, Name } from "./style";
 
-const Wallet = ({ cor, title, name, value, icon, setShowWalletModal}) => {
+const Wallet = () => {
   return (
-    <Container onClick={() => setShowWalletModal(true)}>
-      <IconBox cor={cor} icon={icon}></IconBox>
+    <Container>
+      <IconBox></IconBox>
       <WrapperType>
-        <Type>{title}</Type>
-        <Name>{name}</Name>
+        <Type></Type>
+        <Name></Name>
       </WrapperType>
-      <Value value={value.toFixed(2)}></Value>
+      <Value></Value>
     </Container>
   );
 };

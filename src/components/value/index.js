@@ -1,11 +1,11 @@
 import React from "react";
 import { Container, Currency, Price } from "./style";
 
-const Value = ({value}) => {
+const Value = () => {
   return (
     <Container>
       <Currency>R$</Currency>
-      <Price>{value}</Price>
+      <Price>100.000,00</Price>
     </Container>
   );
 };

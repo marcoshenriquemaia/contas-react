@@ -1,19 +1,19 @@
 import React from "react";
-import IconBox from "../icon-box";
-import Value from "../value";
+import IconBox from "../../icon-box";
+import Value from "../../value";
 import { Container, Wrapper, Title, Bar, ProgressBar } from "./style.js";
 
-const Goal = ({title, icon, value}) => {
+const Goal = () => {
   return (
     <Container>
-      <IconBox icon={icon}></IconBox>
+      <IconBox></IconBox>
       <Wrapper>
-        <Title>{title}</Title>
+        <Title>Teste</Title>
         <Bar>
           <ProgressBar></ProgressBar>
         </Bar>
       </Wrapper>
-      <Value value={value}></Value>
+      <Value></Value>
     </Container>
   );
 };

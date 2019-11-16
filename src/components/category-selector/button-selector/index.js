@@ -1,6 +1,6 @@
 import React from 'react'
 import { ButtonPlus } from './style'
-import IconType from '../icon-type'
+import IconType from '../../shared/icon-type'
 
 const ButtonSelector = () =>{
   return(

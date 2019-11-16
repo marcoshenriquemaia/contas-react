@@ -1,18 +1,16 @@
 import styled, { css} from "styled-components";
 
 export const Container = styled.div`
-  width: calc(100%);
+  width: 100%;
   height: 4em;
   display: flex;
   border-radius: 9px;
   align-items: center;
-  animation: shrink 150ms;
   background-color: #d2e4fa;
   z-index: 15;
   box-sizing: border-box;
   margin-bottom: 1em;
   padding: 0 8px;
-  box-sizing: border-box;
   animation-name: entry;
   animation-duration: 250ms;
   animation-fill-mode: backwards;
@@ -21,7 +19,7 @@ export const Container = styled.div`
 
   @keyframes entry {
     from{
-      transform: translatex(-30%);
+      transform: translatex(-100%);
     }to{
       transform: translatex(0);
     }

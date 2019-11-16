@@ -2,9 +2,9 @@ import React from 'react'
 import { Container } from './style.js'
 import IconType from '../shared/icon-type/index.js'
 
-const IconBox = ({cor, icon}) =>{
+const IconBox = ({icon}) =>{
   return(
-    <Container cor={cor} active={''}>
+    <Container>
       <IconType icon={icon}/>
     </Container>
   )

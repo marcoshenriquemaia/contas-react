@@ -2,11 +2,11 @@ import React from "react";
 import { Container, Currency, Total } from "./style.js";
 import formatReal from '../utils/format-real'
 
-const TotalValue = ({totalValueExpanse}) => {  
+const TotalValue = () => {  
   return (
     <Container>
       <Currency>R$</Currency>
-      <Total>{formatReal(totalValueExpanse)}</Total>
+      <Total>100.000.00</Total>
     </Container>
   );
 };
