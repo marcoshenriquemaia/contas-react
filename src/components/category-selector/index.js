@@ -6,14 +6,15 @@ import defaultCategorys from "./default-categorys";
 const CategorySelector = ({ type }) => {
   const [selecting, setSelecting] = useState(false);
   const [selected, setSelected] = useState({});
+
   const handleClickSelect = ({ title, subTitle, icon }) => {
     setSelected({ title, subTitle, icon });
     setSelecting(!selecting);
   };
   const handleClickContainer = e => {
-    if (selecting) return;
     setSelecting(!selecting);
   };
+
   return (
     <WapperSelector>
       <Container

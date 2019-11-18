@@ -1,16 +1,23 @@
 import React from "react";
-import { Container, Title, List, Button } from './style.js'
+import { Container, Title, List, Button } from "./style.js";
 import Goal from "../goals-list/goal";
 
-const GoalsList = ({setShowGoals}) => {
+const GoalsList = ({ setShowGoals, store }) => {
+  const { goals } = store;
+  console.log(goals);
+
+  const handleClickButton = () => {
+    setShowGoals(true);
+  };
+
   return (
-      <Container>
-        <Title>Metas</Title>
-        <List>
-          <Goal></Goal>
-        <Button onClick={() => setShowGoals(true)}>Nova Meta</Button>
-        </List>
-      </Container>
+    <Container>
+      <Title>Metas</Title>
+      <List>
+        {goals && goals.map(({name, type: {icon, color}, finalValue}, index) => <Goal name={name} icon={icon} finalValue={finalValue} color={color} key={`goal-key-${index}`}></Goal>)}
+        <Button onClick={handleClickButton}>Nova Meta</Button>
+      </List>
+    </Container>
   );
 };
 

@@ -5,7 +5,8 @@ import Dialer from '../dialer'
 import { Button } from "../goals-list/style";
 
 const ModalGoal = () =>{
-
+  const [dialerValue, setDialerValue] = useState('');
+  
   return(
     <Container >
       <BoxModal >
@@ -15,8 +16,8 @@ const ModalGoal = () =>{
           <TitleFinishGoal>Final da meta</TitleFinishGoal>
           <DateField type='date'/>
         </FinishGoalWrapper>
-        <Dialer type='small'></Dialer>
-      <Button > Criar Meta</Button>
+        <Dialer type='small' value={dialerValue} setValue={setDialerValue}></Dialer>
+      <Button> Criar Meta</Button>
       </BoxModal>
     </Container>
   )

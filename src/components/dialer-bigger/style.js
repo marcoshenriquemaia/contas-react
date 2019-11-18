@@ -32,8 +32,8 @@ export const ValueField = styled.div`
   justify-content: center;
   font-size: 2em;
   color: #53ffb9;
-  ${({ headerType }) => headerType == "expanse" && css` color: #ff5353;`}
-  ${({ headerType }) => headerType == "transfer" && css`color: #53a9ff;`}
+  ${({ headerType }) => headerType === "expanse" && css` color: #ff5353;`}
+  ${({ headerType }) => headerType === "transfer" && css`color: #53a9ff;`}
 `;
 
 export const Currency = styled.span`

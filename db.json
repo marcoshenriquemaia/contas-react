@@ -2,69 +2,171 @@
   "users": [
     {
       "id": 1,
-      "name": "Marcos Henrique Maia Oliveira",
-      "email": "henriquemarcosmaia@gmail.com",
-      "wallet": [
+      "totalValueWallet": 0,
+      "filteredDates": [
         {
-          "_Id": 1,
-          "title": "Itau",
-          "name": "Marcos",
-          "value": 1050.25,
-          "icon": "wallet",
-          "color": "blue",
-          "expanses": []
-        },
-        {
-          "_Id": 2,
-          "title": "Santander",
-          "name": "Marcos",
-          "value": 5350.66,
-          "icon": "wallet",
-          "color": "red",
-          "expanses": []
-        },
-        {
-          "_Id": 3,
-          "title": "NuBank",
-          "name": "Marcos",
-          "value": 2536.67,
-          "icon": "wallet",
-          "color": "purple",
-          "expanses": []
+          "date": "",
+          "value": [
+            {
+              "value": 0,
+              "wallet": {
+                "category": "",
+                "subCategory": "",
+                "icon": ""
+              },
+              "category": {
+                "category": "",
+                "subCategory": "",
+                "icon": ""
+              },
+              "dateExpanse": "",
+              "portionsValue": 0,
+              "obs": "",
+              "tagList": [
+                ""
+              ]
+            }
+          ]
         }
       ],
-     "expansesCategorys": [
-      {
-        "title": "Supermercado",
-        "name": "Higiene",
-        "icon": "supermarket"
-      },
-      {
-        "title": "Lazer",
-        "name": "Cinema",
-        "icon": "recreation"
-      },
-      {
-        "title": "Transporte",
-        "name": "Uber",
-        "icon": "transport"
-      },
-      {
-        "title": "Educação",
-        "name": "Material Escola",
-        "icon": "education"
-      },
-      {
-        "title": "Jogos",
-        "name": "x-box",
-        "icon": "games"
-      },
-      {
-        "title": "Alimentação",
-        "name": "Fast-food",
-        "icon": "food"
-      }
-     ]
+      "walletList": [
+        {
+          "id": 1,
+          "owner": "",
+          "totalValue": 0,
+          "expases": [
+            {
+              "value": 0,
+              "wallet": {
+                "category": "",
+                "subCategory": "",
+                "icon": ""
+              },
+              "category": {
+                "category": "",
+                "subCategory": "",
+                "icon": ""
+              },
+              "dateExpanse": "",
+              "portionsValue": 0,
+              "obs": "",
+              "tagList": [
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "personalizedCategory": [
+        {
+          "category": "",
+          "subCategory": [
+            ""
+          ],
+          "icon": "",
+          "color": ""
+        }
+      ],
+      "goals": [
+        {
+          "type": {
+            "category": "Education",
+            "subCategory": [
+              ""
+            ],
+            "icon": "education",
+            "color": "purple"
+          },
+          "name": "Faculdade",
+          "finalDate": "",
+          "finalValue": 15000000,
+          "atualValue": 0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "totalValueWallet": 0,
+      "filteredDates": [
+        {
+          "date": "",
+          "value": [
+            {
+              "value": 0,
+              "wallet": {
+                "category": "",
+                "subCategory": "",
+                "icon": ""
+              },
+              "category": {
+                "category": "",
+                "subCategory": "",
+                "icon": ""
+              },
+              "dateExpanse": "",
+              "portionsValue": 0,
+              "obs": "",
+              "tagList": [
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "walletList": [
+        {
+          "id": 1,
+          "owner": "",
+          "totalValue": 0,
+          "expases": [
+            {
+              "value": 0,
+              "wallet": {
+                "category": "",
+                "subCategory": "",
+                "icon": ""
+              },
+              "category": {
+                "category": "",
+                "subCategory": "",
+                "icon": ""
+              },
+              "dateExpanse": "",
+              "portionsValue": 0,
+              "obs": "",
+              "tagList": [
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "personalizedCategory": [
+        {
+          "category": "",
+          "subCategory": [
+            ""
+          ],
+          "icon": "",
+          "color": ""
+        }
+      ],
+      "goals": [
+        {
+          "type": {
+            "category": "",
+            "subCategory": [
+              ""
+            ],
+            "icon": "",
+            "color": ""
+          },
+          "name": "",
+          "finalDate": "",
+          "finalValue": 0,
+          "atualValue": 0
+        }
+      ]
     }
   ]
 }

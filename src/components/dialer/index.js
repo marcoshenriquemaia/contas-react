@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Container,
   ValueField,
@@ -8,7 +8,7 @@ import {
 import IconType from "../shared/icon-type";
 import formatReal from "../utils/format-real";
 
-const Dialer = ({setValue, value, type}) => {
+const Dialer = ({setValue, value, type, headerType}) => {
   const backspaceNumber = () =>{
     const numberArray = [...value];
     numberArray.pop();
@@ -17,7 +17,7 @@ const Dialer = ({setValue, value, type}) => {
 
   return (
     <Container>
-      <ValueField type={type}>R$ {formatReal(value)}</ValueField>
+      <ValueField type={type} headerType={headerType}>R$ {formatReal(value)}</ValueField>
       <KeyBox type={type}>
         <Key type={type}onClick={() => setValue(`${value}1`)}>1</Key>
         <Key type={type}onClick={() => setValue(`${value}2`)}>2</Key>
@@ -29,7 +29,7 @@ const Dialer = ({setValue, value, type}) => {
         <Key type={type}onClick={() => setValue(`${value}8`)}>8</Key>
         <Key type={type}onClick={() => setValue(`${value}9`)}>9</Key>
         <Key type={type}onClick={() => setValue(`${value}0`)}>0</Key>
-        <IconType icon="backspace" onClick={()=>backspaceNumber()}></IconType>
+        <IconType icon="backspace" onClick={backspaceNumber}></IconType>
       </KeyBox>
     </Container>
   );

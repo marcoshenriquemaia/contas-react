@@ -17,7 +17,7 @@ export const Revenue = styled.div`
   color: #fff;
   background-image: linear-gradient(to top, #53a9ff, #328de8);
   ${({ headerType }) =>
-    headerType == "revenue" &&
+    headerType === "revenue" &&
     css`
       background-image: linear-gradient(to top, #53a9ff99, #328de899);
     `}
@@ -33,7 +33,7 @@ export const Expanse = styled.div`
   border: none;
   background-image: linear-gradient(to top, #53a9ff, #328de8);
   ${({ headerType }) =>
-    headerType == "expanse" &&
+    headerType === "expanse" &&
     css`
       background-image: linear-gradient(to top, #53a9ff99, #328de899);
     `}
@@ -50,7 +50,7 @@ export const Transfer = styled.div`
   color: #fff;
   background-image: linear-gradient(to top, #53a9ff, #328de8);
   ${({ headerType }) =>
-    headerType == "transfer" &&
+    headerType === "transfer" &&
     css`
       background-image: linear-gradient(to top, #53a9ff99, #328de899);
     `}

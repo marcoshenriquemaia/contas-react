@@ -1,11 +1,13 @@
 import React from "react";
 import { Container, Currency, Price } from "./style";
+import formatReal from "../utils/format-real"
 
-const Value = () => {
+
+const Value = ({value}) => {
   return (
     <Container>
       <Currency>R$</Currency>
-      <Price>100.000,00</Price>
+      <Price>{formatReal(value)}</Price>
     </Container>
   );
 };

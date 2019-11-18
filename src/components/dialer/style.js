@@ -44,10 +44,12 @@ export const KeyBox = styled.div`
 `;
 
 export const ValueField = styled.span`
+  color: #53A9FF;
   ${({ type }) =>
     type === "bigger" &&
     css`
       height: 25vh;
+      font-size: 2em;
     `}
   ${({ type }) =>
     type === "small" &&
@@ -55,12 +57,14 @@ export const ValueField = styled.span`
       height: 36px;
       border-radius: 9px;
     `}
+    ${({headerType}) => headerType === 'expanse' && css` color: #FF5353; `}
+    ${({headerType}) => headerType === 'revenue' && css` color: #53FFB9; `}
+    ${({headerType}) => headerType === 'transfer' && css` color: #53A9FF; `}
   width: 100%;
   background-color: #eeeeee;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #53a9ff;
 `;
 export const Key = styled.button`
   border: 3px solid #53a9ff;
