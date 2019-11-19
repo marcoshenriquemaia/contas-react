@@ -3,12 +3,11 @@ import { Container, WapperSelector } from "./style.js";
 import SelectableItem from "./selectable-item";
 import defaultCategorys from "./default-categorys";
 
-const CategorySelector = ({ type }) => {
+const CategorySelector = ({ type, setCategorySelected, categorySelected }) => {
   const [selecting, setSelecting] = useState(false);
-  const [selected, setSelected] = useState({});
 
-  const handleClickSelect = ({ title, subTitle, icon }) => {
-    setSelected({ title, subTitle, icon });
+  const handleClickSelect = ({ title, subTitle, icon, color }) => {
+  setCategorySelected({ category: title, subCategory: [subTitle], icon, color });
     setSelecting(!selecting);
   };
   const handleClickContainer = e => {
@@ -23,9 +22,9 @@ const CategorySelector = ({ type }) => {
         itemAmount={defaultCategorys[type].length}
       >
         <SelectableItem
-          title={selected.title}
-          subTitle={selected.subTitle}
-          icon={selected.icon}
+          title={categorySelected.title}
+          subTitle={categorySelected.subTitle}
+          icon={categorySelected.icon}
         />
         {selecting &&
           defaultCategorys[type].map((item, index) => (
@@ -39,7 +38,8 @@ const CategorySelector = ({ type }) => {
                 handleClickSelect({
                   title: item.title,
                   subTitle: item.name,
-                  icon: item.icon
+                  icon: item.icon,
+                  color: item.color,
                 })
               }
             />

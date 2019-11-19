@@ -5,7 +5,6 @@ import GoalsList from "../../components/goals-list";
 import { Container, Wrapper } from "./style.js";
 import ModalGoals from "../../components/modal-goal";
 import AppContext from '../../context/app-context'
-import { UPDATE } from "../../reducers/root-reducer"
 
 const Home = () => {
   const [showGoals, setShowGoals] = useState(false);
@@ -13,7 +12,7 @@ const Home = () => {
 
   return (
     <Container >
-      {showGoals && <ModalGoals></ModalGoals>}
+      {showGoals && <ModalGoals setStore={setStore} setShowGoals={setShowGoals}></ModalGoals>}
       <TotalValue></TotalValue>
       <Wrapper>
         <WalletList></WalletList>
