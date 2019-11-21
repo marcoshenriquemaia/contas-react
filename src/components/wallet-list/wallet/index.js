@@ -2,16 +2,17 @@ import React from "react";
 import IconBox from "../../icon-box";
 import Value from "../../value";
 import { Container, WrapperType, Type, Name } from "./style";
+import formatReal from '../../utils/format-real'
 
-const Wallet = () => {
+const Wallet = ({ name, owner, totalValue }) => {
   return (
     <Container>
-      <IconBox></IconBox>
+      <IconBox icon="wallet" />
       <WrapperType>
-        <Type></Type>
-        <Name></Name>
+        <Type>{name}</Type>
+        <Name>{owner}</Name>
       </WrapperType>
-      <Value></Value>
+    <Value value={totalValue}/>
     </Container>
   );
 };

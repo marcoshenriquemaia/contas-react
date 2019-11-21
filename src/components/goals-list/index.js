@@ -4,7 +4,6 @@ import Goal from "../goals-list/goal";
 
 const GoalsList = ({ setShowGoals, store }) => {
   const { goals } = store;
-  console.log(goals);
 
   const handleClickButton = () => {
     setShowGoals(true);

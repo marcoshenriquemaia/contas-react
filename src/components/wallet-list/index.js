@@ -2,10 +2,12 @@ import React from "react";
 import Wallet from "./wallet";
 import { Container } from "./style";
 
-const WalletList = () => {
+const WalletList = ({ store }) => {
+  const { walletList } = store;
+  console.log(walletList);
   return (
     <Container>
-      <Wallet />
+      {walletList && walletList.map(wallet => <Wallet name={wallet.name} owner={wallet.owner} totalValue={wallet.totalValue}/>) }
     </Container>
   );
 };

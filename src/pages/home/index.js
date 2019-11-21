@@ -15,7 +15,7 @@ const Home = () => {
       {showGoals && <ModalGoals setStore={setStore} setShowGoals={setShowGoals}></ModalGoals>}
       <TotalValue></TotalValue>
       <Wrapper>
-        <WalletList></WalletList>
+        <WalletList store={store}></WalletList>
         <GoalsList setShowGoals={setShowGoals} store={store} setStore={setStore}></GoalsList>
       </Wrapper>
     </Container>
