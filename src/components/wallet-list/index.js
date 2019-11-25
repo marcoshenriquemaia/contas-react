@@ -4,10 +4,9 @@ import { Container } from "./style";
 
 const WalletList = ({ store }) => {
   const { walletList } = store;
-  console.log(walletList);
   return (
     <Container>
-      {walletList && walletList.map(wallet => <Wallet name={wallet.name} owner={wallet.owner} totalValue={wallet.totalValue}/>) }
+      {walletList && walletList.map((wallet, index) => <Wallet key={`key-wallet-${index}`} name={wallet.name} owner={wallet.owner} totalValue={wallet.totalValue}/>) }
     </Container>
   );
 };

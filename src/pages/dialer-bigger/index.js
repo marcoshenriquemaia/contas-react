@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Container } from "./style";
-import NavHeader from "../NavHeader";
-import { Button } from "../goals-list/style";
-import formatReal from "../utils/format-real";
-import ModalExpanse from "../modal-expanse";
-import Dialer from "../dialer";
+import NavHeader from "../../components/NavHeader";
+import { Button } from "../../components/goals-list/style";
+import formatReal from "../../components/utils/format-real";
+import ModalExpanse from "../../components/modal-expanse";
+import Dialer from "../../components/dialer";
 
 const DialerBigger = () => {
   const [dialerValue, setDialerValue] = useState("");
@@ -23,6 +23,8 @@ const DialerBigger = () => {
           headerType={headerType}
           setHeaderType={setHeaderType}
           dialerValue={formatReal(dialerValue)}
+          type='expansesCategorys'
+          dialerValue={dialerValue}
         />
       )}
       <NavHeader

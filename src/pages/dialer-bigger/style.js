@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Button } from "../goals-list/style";
+import { Button } from "../../components/goals-list/style";
 
 export const Container = styled.div`
   width: 100%;

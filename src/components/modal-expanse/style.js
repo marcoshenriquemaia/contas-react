@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Currency } from '../dialer-bigger/style'
+import { Currency } from '../../pages/dialer-bigger/style'
 import { Button } from '../goals-list/style'
 
 export const Container = styled.div`

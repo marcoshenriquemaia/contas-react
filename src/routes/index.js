@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "../pages/home";
 import TabBottomNavigation from "../components/tab-bottom-navigation";
-import DialerBigger from "../components/dialer-bigger";
+import DialerBigger from "../pages/dialer-bigger";
 import Expanses from "../pages/expanses";
 import { AppProvider } from "../context/app-context";
 import RootReducer from "../reducers/root-reducer";
