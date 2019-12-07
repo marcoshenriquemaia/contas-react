@@ -1,4 +1,3 @@
-
 export const ADD_WALLET = "ADD_WALLET";
 export const ADD_EXPANSE = "ADD_EXPANSE";
 export const ADD_GOAL = "ADD_GOAL";
@@ -10,7 +9,9 @@ const RootReducer = (state, action) => {
     case "BOOT":
       return action.payload;
     case "ADD_GOAL":
-      return { ...state, goals: [...state.goals, action.payload] }
+      return { ...state, goals: [...state.goals, action.payload] };
+    case "ADD_EXPANSE":
+      return { ...state, walletList: [...state.walletList, action.payload] };
     default:
       return state;
   }

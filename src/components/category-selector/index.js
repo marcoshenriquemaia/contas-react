@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, WapperSelector } from "./style.js";
 import SelectableItem from "./selectable-item";
-import defaultCategorys from "./default-categorys";
+import Categorys from "./default-categorys";
 
 const CategorySelector = ({ type, setCategorySelected, categorySelected }) => {
   const [selecting, setSelecting] = useState(false);
@@ -13,13 +13,13 @@ const CategorySelector = ({ type, setCategorySelected, categorySelected }) => {
   const handleClickContainer = e => {
     setSelecting(!selecting);
   };
-
+  console.log(type);
   return (
     <WapperSelector>
       <Container
         selecting={selecting}
         onClick={handleClickContainer}
-        itemAmount={defaultCategorys[type].length}
+        itemAmount={Categorys[type].length}
       >
         <SelectableItem
           title={categorySelected.title}
@@ -27,7 +27,7 @@ const CategorySelector = ({ type, setCategorySelected, categorySelected }) => {
           icon={categorySelected.icon}
         />
         {selecting &&
-          defaultCategorys[type].map((item, index) => (
+          Categorys[type].map((item, index) => (
             <SelectableItem
               key={`selectable-key-${index}`}
               icon={item.icon}

@@ -1,4 +1,4 @@
-const defaultCategorys = {
+const Categorys = {
   expansesCategorys: [
     {
       title: "Supermercado",
@@ -40,6 +40,6 @@ const defaultCategorys = {
       name: "Fast-food",
       icon: "food"
     }
-  ]
+  ],
 };
-export default defaultCategorys;
+export default Categorys;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   Container,
   ValueField,
@@ -17,11 +17,28 @@ import { Button } from "../goals-list/style";
 import { NavLink } from "react-router-dom";
 import CategorySelector from "../category-selector";
 import formatReal from '../utils/format-real'
+import AppContext from "../../context/app-context";
 
 const ModalExpanse = ({type, dialerValue}) => {
   const [walletSelected, setWalletSelected] = useState({});
   const [categorySelected, setCategorySelected] = useState({});
   const [tagList, setTagList] = useState([]);
+  const [dateValue, setDateValue] = useState('');
+  const [portionsValue, setPortionsValue] = useState('');
+  const [obsValue, setObsValue] = useState('');
+  const { store, setStore } = useContext(AppContext);
+  
+  const handleOnChangeDate = ({target}) =>{
+    setDateValue(target.value);
+  }
+
+  const handleOnChangeObs = ({target}) =>{
+    setObsValue(target.value)
+  }
+
+  console.log(store);
+
+  // console.log(walletSelected, categorySelected, tagList, dateValue, portionsValue, dialerValue, obsValue);
 
   return (
     <Container>
@@ -35,14 +52,14 @@ const ModalExpanse = ({type, dialerValue}) => {
         <CategorySelector type={type} setCategorySelected={setCategorySelected} categorySelected={categorySelected}></CategorySelector>
         <WrapperWallet>
           <TitleWallet>Data</TitleWallet>
-          <Date type='date'></Date>
+          <Date type='date' onChange={handleOnChangeDate}></Date>
         </WrapperWallet>
         <WrapperWallet>
           <TitleWallet>Parcelas </TitleWallet>
-          <PortionsBox >1x</PortionsBox>
+          <PortionsBox setPortionsValue={setPortionsValue}>1x</PortionsBox>
         </WrapperWallet>
         <TagBox tagList={tagList} setTagList={setTagList}></TagBox>
-        <Obs></Obs>
+        <Obs onChange={handleOnChangeObs}></Obs>
         <NavLink to="/expanses">
           <Button> </Button>
         </NavLink>
