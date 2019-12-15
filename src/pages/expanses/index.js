@@ -6,7 +6,7 @@ import AppContext from "../../context/app-context"
 
 const Expanses = () => {
   const { store } = useContext(AppContext);
-  
+
   return (
     <Container onClick={() => console.log(store)}>
       <TotalValue />

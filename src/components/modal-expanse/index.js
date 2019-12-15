@@ -18,6 +18,7 @@ import { NavLink } from "react-router-dom";
 import CategorySelector from "../category-selector";
 import formatReal from "../utils/format-real";
 import AppContext from "../../context/app-context";
+import { ADD_EXPANSE } from '../../reducers/root-reducer'
 
 const ModalExpanse = ({ dialerValue }) => {
   const [walletSelected, setWalletSelected] = useState({});
@@ -35,6 +36,19 @@ const ModalExpanse = ({ dialerValue }) => {
   const handleOnChangeObs = ({ target }) => {
     setObsValue(target.value);
   };
+
+
+  const handleClickButton = () =>{
+    setStore({type: ADD_EXPANSE, payload: {
+      title: walletSelected.category,
+      totalValue: parseInt(dialerValue),
+      icon: walletSelected.icon,
+      dateValue,
+      portionsValue,
+      obsValue,
+    }})
+  }
+
 
   return (
     <Container>
@@ -69,7 +83,7 @@ const ModalExpanse = ({ dialerValue }) => {
         <TagBox tagList={tagList} setTagList={setTagList}></TagBox>
         <Obs onChange={handleOnChangeObs}></Obs>
         <NavLink to="/expanses">
-          <Button> </Button>
+          <Button onClick={handleClickButton}></Button>
         </NavLink>
       </ContainerWallet>
     </Container>

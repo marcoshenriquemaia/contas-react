@@ -24,7 +24,7 @@ const ModalGoal = ({ setStore, setShowGoals, store }) => {
         type: categorySelected,
         name: goalName,
         finalDate,
-        finalValue: dialerValue
+        finalValue: parseInt(dialerValue)
       }
     });
     setShowGoals(false);
