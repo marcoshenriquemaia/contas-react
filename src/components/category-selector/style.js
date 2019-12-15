@@ -4,7 +4,6 @@ export const Container = styled.div`
   width: 100%;
   height: 4em;
   max-height: 70.6vh;
-  z-index: 15;
   background-color: #fff;
   position: absolute;
   & > :first-child {
@@ -14,12 +13,15 @@ export const Container = styled.div`
   ${({ selecting }) =>
     selecting &&
     css`
+      z-index: 2;
       flex-direction: column;
       justify-content: flex-start;
       overflow-y: scroll;
-      ${({itemAmount}) => css` height: ${itemAmount * 5}em;`}
+      ${({ itemAmount }) =>
+        css`
+          height: ${(itemAmount + 1) * 5}em;
+        `}
       max-height: 70.6vh;
-      z-index: 20;
       & > :first-child {
         margin-bottom: 1em;
       }

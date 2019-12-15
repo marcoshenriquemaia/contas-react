@@ -23,7 +23,6 @@ const DialerBigger = () => {
           headerType={headerType}
           setHeaderType={setHeaderType}
           dialerValue={formatReal(dialerValue)}
-          type='expansesCategorys'
           dialerValue={dialerValue}
         />
       )}

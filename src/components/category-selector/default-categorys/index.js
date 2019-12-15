@@ -1,5 +1,7 @@
+export const EXPANSES_CATEGORY = 'EXPANSES_CATEGORY'
+
 const Categorys = {
-  expansesCategorys: [
+  EXPANSES_CATEGORY: [
     {
       title: "Supermercado",
       name: "Higiene",

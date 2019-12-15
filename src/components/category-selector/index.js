@@ -1,33 +1,41 @@
 import React, { useState } from "react";
 import { Container, WapperSelector } from "./style.js";
 import SelectableItem from "./selectable-item";
-import Categorys from "./default-categorys";
+import Categorys, { EXPANSES_CATEGORY } from "./default-categorys";
 
-const CategorySelector = ({ type, setCategorySelected, categorySelected }) => {
+const CategorySelector = ({ type, setCategorySelected, categorySelected, store, position }) => {
   const [selecting, setSelecting] = useState(false);
+  const { walletList } = store;
+  const CategoryList = {
+    categorys: Categorys[EXPANSES_CATEGORY],
+    walletList,
+  }
+
 
   const handleClickSelect = ({ title, subTitle, icon, color }) => {
-  setCategorySelected({ category: title, subCategory: [subTitle], icon, color });
+    setCategorySelected({ category: title, subCategory: [subTitle], icon, color });
     setSelecting(!selecting);
   };
-  const handleClickContainer = e => {
+  
+  const handleClickContainer = () => {
     setSelecting(!selecting);
   };
-  console.log(type);
+  
   return (
     <WapperSelector>
       <Container
         selecting={selecting}
         onClick={handleClickContainer}
-        itemAmount={Categorys[type].length}
+        itemAmount={CategoryList[type].length}
+        position={position}
       >
         <SelectableItem
-          title={categorySelected.title}
-          subTitle={categorySelected.subTitle}
+          title={categorySelected.category}
+          subTitle={categorySelected.subCategory}
           icon={categorySelected.icon}
         />
         {selecting &&
-          Categorys[type].map((item, index) => (
+          CategoryList[type].map((item, index) => (
             <SelectableItem
               key={`selectable-key-${index}`}
               icon={item.icon}

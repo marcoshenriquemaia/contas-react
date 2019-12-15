@@ -9,10 +9,10 @@ import AppContext from '../../context/app-context'
 const Home = () => {
   const [showGoals, setShowGoals] = useState(false);
   const { store, setStore } = useContext(AppContext);
-
+  
   return (
     <Container >
-      {showGoals && <ModalGoals setStore={setStore} setShowGoals={setShowGoals}></ModalGoals>}
+      {showGoals && <ModalGoals store={store} setStore={setStore} setShowGoals={setShowGoals}></ModalGoals>}
       <TotalValue></TotalValue>
       <Wrapper>
         <WalletList store={store}></WalletList>

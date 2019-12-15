@@ -32,9 +32,10 @@
       "walletList": [
         {
           "id": 1,
-          "owner": "Marcos",
+          "name": "Marcos",
           "totalValue": 150000,
-          "name": "Santander",
+          "title": "Santander",
+          "icon": "wallet",
           "expases": [
             {
               "value": 0,

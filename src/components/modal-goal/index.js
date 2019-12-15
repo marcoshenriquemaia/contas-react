@@ -11,7 +11,7 @@ import CategorySelector from "../category-selector";
 import Dialer from "../dialer";
 import { Button } from "../goals-list/style";
 
-const ModalGoal = ({ setStore, setShowGoals }) => {
+const ModalGoal = ({ setStore, setShowGoals, store }) => {
   const [dialerValue, setDialerValue] = useState("");
   const [categorySelected, setCategorySelected] = useState({});
   const [goalName, setGoalName] = useState("");
@@ -37,9 +37,10 @@ const ModalGoal = ({ setStore, setShowGoals }) => {
     <Container>
       <BoxModal>
         <CategorySelector
-          type="expansesCategorys"
+          type="categorys"
           categorySelected={categorySelected}
           setCategorySelected={setCategorySelected}
+          store={store}
         />
         <NameField
           placeholder="Nome da Meta"
